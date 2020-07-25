@@ -1,0 +1,71 @@
+{
+  "message": "hello i18n !!",
+  "nav": { 
+    "Home": "Home",
+    "SERVICES": "SERVICES",
+    "ABOUT US": "ABOUT US",
+    "CATEGORIES":"CATEGORIES",
+    "BLOG": "BLOG",
+    "FAQ": "FAQ"
+  },
+  "CATEGORIES OF SERVICES": "CATEGORIES OF SERVICES",
+  "Home": "home", 
+  "EXPLORE": "explore",
+  "All Rights Reserved": "All Rights Reserved",
+  "Socials": "Socials",
+  "Usefull Links":"Useful Links",
+  "About Us": "About Us",
+  "Privacy Policy":"Privacy Policy",
+  "Services": "Services",
+  "Terms & Conditions" : "Terms & Conditions",
+  "Our Contacts": "Our Contacts",
+  "text": "Experience our home services and we bet you that you will experience your dream home.",
+  "texto": "This page will allow you to provide the necessary information that will allow us to locate you quickly, start by choosing the type of service if it is what you need then fill in the for correctly and in the last field specify your requirement here, describe exactly in some sentence what you need." ,
+  "Contact US": "Contact US",
+  "select": "select a kind of service",
+  "theme": {
+    "Dark Mode":"Dark Mode",
+    "Light Mode":"Light Mode"
+  },
+  "FirstName":"FirstName",
+  "LastName": "LastName",
+  "Personal Address": "Personal Address",
+  " phone": "Enter your phone number",
+  "where do you require this service ? " : "where do you require this service ? ",
+  "when do you require this service ? " : "when do you require this service ? ",
+  "city" : "city",
+  "date" : "date",
+  "time" : "time",
+  "call":"I Would you like to received call from",
+  "successful": "From the information you have provided, our team will contact you as soon as possible for an appointment",
+  "address": "address",
+  "book" : "BOOK NOW",
+  "reset": "RESET",
+  "success": "Your requirements have been successfully submited.",
+  "requirements": "Specify your requirements here",
+  "neighbourhood": "neighbourhood",
+  "thank you for trusting us. ": "thank you for trusting us. ",
+  "e.g: bonandjo, located 50m from BEAC": "e.g: bonandjo, located 50m from BEAC",
+    
+  "Customers": "Customers",
+
+
+  "form":{
+    "title": "Please Fill the form below in order to provide your requirements for:"
+  },
+  "items": 
+
+    {
+     
+      "title": "Use the link bellow to Contact us",
+      "titles": "Satisfaction guaranteed",
+      "titlea": "Anytime, Anywhere , we are available to serve you"
+
+    }
+
+  
+  
+  
+
+  
+}

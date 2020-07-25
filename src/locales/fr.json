@@ -1,0 +1,66 @@
+{
+    "message": "bonjour i18n !!",
+    "Home": "accueil",
+    "EXPLORE": "explorer",
+    "nav": { 
+      "Home": "Accueil",
+      "SERVICES": "SERVICES",
+      "ABOUT US": "A PROPOS",
+      "CATEGORIES":"CATEGORIES",
+      "BLOG": "BLOG",
+      "FAQ": "FAQ"
+    },
+    "CATEGORIES OF SERVICES": "LES CATEGORIES DE SERVICES",
+    "All Rights Reserved": "Tous droits reservés",
+    "Socials": "Socials",
+    "Useful Links":"Liens Utiles",
+    "About Us": "A Propos",
+    "Privacy Policy":"Politique de respect de la vie privée",
+    "Services": "Services",
+    "Terms & Conditions" : "Conditions Générales",
+    "Our Contacts": "Nos Contacts",
+    "text": "Faites l'expérience de nos services à  domicile et nous parions que vous ferez l'expérience de la maison de vos rêves",
+    "texto": "cette page vous permettra de fournir les informations nécessaires qui nous permettrons de vous localiser rapidement. commencez par specifier le type de service si c'est ce dont vous avez besoin , ensuite remplir correctement le formulaire et dans le dernier champ 'specifier vos besoins ici', décrivez exactement en quelque phrase ce dont vous avez besoin.",  
+    "Contact US": "Contactez nous",
+    "select": "selectionnez un type de service",
+    "theme": {
+      "Dark Mode":"Mode Sombre",
+      "Light Mode":"Mode Clair"
+    },
+    "Customers": "Clients",
+    "FirstName":"Nom",
+    "LastName": "Prenom",
+    "Personal Address": " Addresse Personnelle",
+    "requirements": "Specifiez vos besoins ici ",
+    " phone": "Enter votre numero de téléphone",
+    "where do you require this service ? " : "où avez-vous besoin de  service ? ",
+    "when do you require this service ? " : "Quand avez-vous besoin de  service ? ",
+    "city" : "ville",
+    "neighbourhood": "Quartier",
+    "e.g: bonandjo, located 50m from BEAC": "ex: bonandjo, situé à  50m de la BEAC",
+    
+    "date" : "Date",
+    "time" : "Heure",
+    "book" : "Reserver maintenant",
+    "reset": "réinitialiser",
+    "success": "vos exigences ont été soumise avec succès.",
+    "thank you for trusting us. ": "merci de nous faire confiance. ",
+    "successful": "A partir des informations que vous nous avez fournies, notre équipe vous contactera dans les plus brefs délais pour un rendez-vous",
+    "call":"Je souhaite recevoir des appels à partir de: ",
+    "address": "addresse",
+    "form":{
+      "title": "Veuillez remplir le formulaire ci-dessous afin de fournir vos exigences pour:"
+    },
+
+
+    "items": 
+
+    {
+     
+      "title": "Utilisez le lien ci-dessous pour nous contacter",
+      "titles": "Satisfaction guarantie",
+      "titlea": "n'importe quand n'importe où, nous sommes là pour vous servir"
+
+    }
+    
+  }
