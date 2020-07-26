@@ -20,7 +20,7 @@
     "Terms & Conditions" : "Conditions Générales",
     "Our Contacts": "Nos Contacts",
     "text": "Faites l'expérience de nos services à  domicile et nous parions que vous ferez l'expérience de la maison de vos rêves",
-    "texto": "cette page vous permettra de fournir les informations nécessaires qui nous permettrons de vous localiser rapidement. commencez par specifier le type de service si c'est ce dont vous avez besoin , ensuite remplir correctement le formulaire et dans le dernier champ 'specifier vos besoins ici', décrivez exactement en quelque phrase ce dont vous avez besoin.",  
+    "texto": "Cette page vous permettra de fournir les informations nécessaires qui nous permettrons de vous localiser rapidement. commencez par specifier le type de service si c'est ce dont vous avez besoin , ensuite remplir correctement le formulaire et dans le dernier champ 'specifier vos besoins ici', décrivez exactement en quelque phrase ce dont vous avez besoin.",  
     "Contact US": "Contactez nous",
     "select": "selectionnez un type de service",
     "theme": {
@@ -32,12 +32,12 @@
     "LastName": "Prenom",
     "Personal Address": " Addresse Personnelle",
     "requirements": "Specifiez vos besoins ici ",
-    " phone": "Enter votre numero de téléphone",
+    " phone": "Enter un numero de téléphone",
     "where do you require this service ? " : "où avez-vous besoin de  service ? ",
     "when do you require this service ? " : "Quand avez-vous besoin de  service ? ",
     "city" : "ville",
     "neighbourhood": "Quartier",
-    "e.g: bonandjo, located 50m from BEAC": "ex: bonandjo, situé à  50m de la BEAC",
+    "e.g: bonandjo, located 50m from BEAC": "ex: bonandjo, situé à  50m de:",
     
     "date" : "Date",
     "time" : "Heure",

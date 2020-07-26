@@ -4,7 +4,15 @@ import router from './router'
 import vuetify from './plugins/vuetify';
 import store from './store'
 import i18n from './i18n'
+import VueFuse from 'vue-fuse'
+import VModal from 'vue-js-modal'
+import ToggleButton from 'vue-js-toggle-button'
+import VueTelInputVuetify from 'vue-tel-input-vuetify/lib';
 
+Vue.use(VueTelInputVuetify, {vuetify,});
+Vue.use(ToggleButton)
+Vue.use(VueFuse)
+Vue.use(VModal)
 
 
 

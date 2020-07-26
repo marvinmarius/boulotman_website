@@ -1,13 +1,16 @@
 <template>
 
   <v-container fluid class="bg-dark-gray" >
-<div class="justify-center ml-10 flex   ">
-  <v-col cols="9">
+<div class="align-center ml-10 flex   ">
+  
+  
+  <v-col cols="12">
     <h3  v-html="$t('texto')">
    </h3>
 
   </v-col>
 </div>
+<v-divider></v-divider>
 <div class=" ml-10">
     <v-col cols="12" sm="6" md="5"  
    
@@ -19,14 +22,15 @@
         item-text="name"
         item-value="id"
         outlined
+      
         :placeholder= "$t('select')"
         rounded
        color="success"
-       item-color
+       
         chips
         tags
         solo
-      
+     
         single-line
         required
       >
@@ -45,11 +49,11 @@
             <v-form class="align-content-center"
     ref="form"
     @submit.prevent="onSubmit"
-    id="nativeForm"
+    
     v-model="valid"
     
   >
- 
+
     <v-row justify="space-between" xs12 lg6>
           <v-col cols="12" sm="6" md="5">
           <v-text-field
@@ -57,9 +61,11 @@
              :counter="15"
              :rules="nameRules"
               :label= "$t('FirstName')"
+              append-icon="mdi-account"
               required
               outlined
               rounded
+              class="required"
             ></v-text-field>
             
           </v-col>
@@ -69,9 +75,12 @@
             :counter="15"
              :rules="nameRules"
               :label= "$t('LastName')"
+                append-icon="mdi-account"
               required
+               class="required"
               outlined
               rounded
+              
             ></v-text-field>
            
           </v-col>
@@ -80,36 +89,48 @@
     <v-text-field
       v-model="customer.address"
         :label= "$t('Personal Address')"
-      
+        append-icon="mdi-tooltip-account"
       outlined
       rounded
     ></v-text-field>
-
+ 
      <v-row justify="space-between" xs12 lg6>
        <v-col cols="12" sm="6" md="5">
         <v-text-field
         v-model="customer.email"
         :rules="emailRules"
         label="E-mail"
+          append-icon="mdi-email"
         outlined
+         class="required"
         required
         rounded
     ></v-text-field>
        </v-col>
         <v-col cols="12" sm="6" md="5">
-            <v-text-field
-                  :label= "$t('phone')"
-              outlined 
-              
-               :rules="phoneRules"
-              :counter="9"
-              type="Phone"    
-                  mask="phone" 
-                  :value="customer.phone_number"  
+         
+                <vue-tel-input-vuetify 
+               
+    :rules="phoneRules"
+    
+    :only-countries="['CM']"
+    default-country-code="+237"
+    
+    id="phone"
+    click
+    append-icon="mdi-phone"
+    :label= "$t('phone')"
+    maxLen="9"
+    :valid-characters-only="true"
+          :value="customer.phone_number"  
              v-model="customer.phone_number"
              required
+              class="required"
              rounded
-            ></v-text-field>
+              outlined 
+            
+    ></vue-tel-input-vuetify>
+           
         
           </v-col>
           
@@ -121,9 +142,11 @@
         <v-text-field
         v-model="customer.city"
       placeholder="ex: Bamenda"
+        append-icon="mdi-map-marker"
         :label= "$t('city')"
         outlined
         required
+    
         rounded
     ></v-text-field>
        </v-col>
@@ -131,7 +154,7 @@
         <v-text-field
         v-model="customer.neighbourhood"
         :placeholder= "$t('e.g: bonandjo, located 50m from BEAC')"
-      
+        append-icon="mdi-crosshairs-gps"
         :label= "$t('neighbourhood')"
         outlined
         required 
@@ -158,6 +181,7 @@
             <v-text-field
               :value="fromDateDisp"
               rounded
+                append-icon="mdi-calender-range"
               outlined
               clearable
               :label= "$t('date')"
@@ -191,6 +215,7 @@
           <v-text-field
             v-model="time"
            :label= "$t('time')"
+             append-icon="mdi-clock-outline"
          outlined
          rounded
             readonly
@@ -222,7 +247,7 @@
     <v-col cols="12" sm="6" md="5">
       <v-text-field
       v-model="order.address"
-     
+       append-icon="mdi-account-box"
      rounded
         :label= "$t('address')"
     outlined
@@ -232,12 +257,13 @@
       <v-textarea
         v-model="order.more_info"
         auto-grow
-        
+          append-icon="mdi-note-text-outline"
       outlined
         :rules="textAreaRules"
         :counter="150"
         :label= "$t('requirements')"
         rounded
+        
         rows="2"
       ></v-textarea>
       
@@ -328,7 +354,7 @@ data(){
    select: '',
       
       valid: false,
-     
+     phone: null,
       customer:{
           address: '',
           first_name: '',
@@ -390,6 +416,8 @@ data(){
         //v => v.length > 0 ||  'this field may not be empty',
         //v => Number.isInteger(Number(v)) || "the value must be an integer number",
            v => !!v || 'this field  is required',
+           //v => /[^0-8]/.test(v) || 'must contains  9 numbers',
+          V => V.length > 8 || 'less than 9 characters is not accepted ' 
         
         
         
@@ -411,6 +439,12 @@ data(){
     },
     
 methods:{
+  
+
+  //acceptNumber() {
+   //var x = this.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,3})/);
+    //this.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+    //},
     onSubmit(){
     
    
@@ -453,6 +487,8 @@ methods:{
         localStorage.setItem('service',JSON.stringify(this.services.id));
   },
   computed:{
+
+   
     //if (this.test !=0){
     // localStorage.setItem(this.test)
    // }
@@ -491,21 +527,22 @@ methods:{
  
 }
 </script>
-<style >
-.categories{
-  text-align: center;
-  text-justify: auto;
-  font-family: Lobster Two,cursive;
-    text-transform: capitalize;
-    font-weight: 600;
-    font-size: 40px
-};
+<style  >
+
+.required::after{
+content: "*";
+width: 40px;
+position: static;
+color: red;
+}
 h3{
-  width: 800;
+
   
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-weight: 600;
-    font-size: 40px
+  text-shadow: 10px;
+  text-decoration: brown;
+  font-family: 'Arial Narrow Bold', sans-serif;
+  font-weight: 100;
+    font-size: 30px
 }
 
 </style>

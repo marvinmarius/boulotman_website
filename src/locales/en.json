@@ -26,11 +26,12 @@
   "theme": {
     "Dark Mode":"Dark Mode",
     "Light Mode":"Light Mode"
+    
   },
   "FirstName":"FirstName",
   "LastName": "LastName",
   "Personal Address": "Personal Address",
-  " phone": "Enter your phone number",
+  " phone": "Enter a phone number",
   "where do you require this service ? " : "where do you require this service ? ",
   "when do you require this service ? " : "when do you require this service ? ",
   "city" : "city",
