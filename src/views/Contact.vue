@@ -1,141 +1,57 @@
 <template>
-  <v-flex >
+  <v-container fluid >
       <div  class="flex  fill-height" >
 <v-img  src="../assets/anytime-header.jpg"  height="400">
     </v-img>
       </div>
       <v-divider></v-divider>
-    <v-layout class="flex fill-height pt-6 mt-6" >
+    <v-layout class=" fill-height pt-6 mt-6 justify-space-between "  >
 
-    <v-col>
-        
-    <v-card   dark>
-      <v-card-title class="justify-center align-center">
-      Do you have any question? Please do not hesitate to contact us directly. Our team will come back to you within a matter 
-      of hours to help you </v-card-title>
-      <v-divider></v-divider>
-<v-card-text >
-   <div class="text-xs-center">
-      <v-menu
-        min-width = 300
-        top
-        v-model="menu"
-        :close-on-click="false"
-        :close-on-content-click="false"
-        :nudge-top="60"
-        offset-x
-      >
-        <template v-slot:activator="{ on }">
-          <v-fab-transition>
-            <v-btn
-              v-model="fab"
-              v-on="on"
-              color='green darken-1'
-              @click="fab = !fab; menu = false"
-              dark
-              fixed
-              bottom
-              right
-              fab
-            >
-              <v-icon>comment</v-icon>
-              <v-icon>close</v-icon>
-            </v-btn>
-          </v-fab-transition>
-        </template>
-        <v-card>
-          <v-list dark class="chat-header">
-            <v-list-tile>
-              <v-list-tile-content>
-                <v-list-tile-title>Contact me</v-list-tile-title>
-              </v-list-tile-content>
-              <v-list-tile-action>
-                <v-btn
-                  icon
-                  @click="fab = !fab; menu = false"
-                >
-                  <v-icon>cancel</v-icon>
-                </v-btn>
-              </v-list-tile-action>
-            </v-list-tile>
-          </v-list>
-          <v-divider></v-divider>
-          <v-container class="chat-background">
-            <v-layout row wrap >
-              <v-flex class="text-xs-right" xs12 mb-4>
-                <v-chip class="chip-chat ">
-                  Hello, how can we help you? 
-                </v-chip>
-              </v-flex>
-              <v-flex xs10>
-                <v-text-field
-                  single-line
-                  color="teal"
-                  class="my-input"
-                  v-model="text"
-                  outline
-                ></v-text-field>
-              </v-flex>
-              <v-flex xs2>
-                <v-btn
-                  large
-                  class="teal--text"
-                  icon
-                  @click="fab = !fab; menu = false"
-                  :href="apilink"
-                  target="_blank"
-                >
-                  <v-icon >send</v-icon>
-                </v-btn>
-               </v-flex>
-             </v-layout>  
-          </v-container>
-        </v-card>  
-      </v-menu>   
-    </div>
-        <v-form class="align-content-center"
-    ref="form"
-    v-model="valid"
-    lazy-validation
-    
-  >
+    <v-col cols="12" sm="5" md="5">
+          <v-card  class="fill-height pa-4"  dark>
    
-    
-    <v-btn 
+      <v-row >
+      <v-col>
+          <div class="chat" v-html="$t('chat')">
+        </div>
+      </v-col>
+    </v-row>
+
+      <v-divider></v-divider> 
+     <v-row class="mt-6">
      
-      color="success"
-      right
-      @click="sendMessage()"
-      class="center"
-      value="send the email"
-      
-    >
-      By WhatsApp
-    </v-btn>
-    <v-divider></v-divider>
-    <v-btn 
-      color="success"
-      right
-      @click="sendEmail()"
-      class="center"
-      value="send the email"
-      
-    >
-      By MAIL<v-icon size="24px" left>mdi-e-mail</v-icon>
-    </v-btn>
-
+      <v-col class="mt-8 offset-5">
+        <span>{{$t('whatsapp')}}</span>
+      <v-img
    
-  </v-form>
+          alt="whasapp Logo"
+          @click="sendMessage"
+          src="../assets/Whatsapp_logo_svg.png" 
+          width="100"/>
+      </v-col>
+    </v-row>
+    
 
-</v-card-text>
+    <v-divider></v-divider>
 
-    </v-card>
-
+    <v-row class="mt-6">
+   
+      <v-col class="mt-8 offset-5">
+       <span> {{$t('mail')}}</span>
+      <v-img
+   
+          alt="email Logo"
+          @click="sendMail"
+          src="../assets/mail.png" 
+          width="100"/>
+      </v-col>
+    </v-row>
+          </v-card>
     </v-col>
     
-<v-col >
+<v-col cols="12" sm="5" md="5">
          
-     <v-card  height="600">
+     <v-card class="fill-height">
        <v-card-title class="justify-center" >OUR LOCATION</v-card-title>
       <iframe  class="fill-height" csrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.641965496517!2d9.741750914332835!3d4.093073497023818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610e0aeb0e27c7%3A0x81365289755f15c!2sInstitut%20Priv%C3%A9%20Polyvalent%20de%20Bonamoussadi!5e0!3m2!1sfr!2scm!4v1592489199408!5m2!1sfr!2scm" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
      </v-card>
@@ -145,67 +61,35 @@
  
 
  
-  </v-flex>
+  </v-container>
 </template>
 
 <script>
 //import emailjs from 'emailjs-com';
 
   export default {
+
+    methods:{
+        sendMail(){
+          window.open("https://mail.google.com/mail/?view=cm&fs=1&to=lamenacecoatch@yahoo.fr")
+        },
+        sendMessage(){
+          window.open("https://api.whatsapp.com/send?phone=' + 690470152 + '&text=%20' + yo")
+        }
+    },
     data: () => ({
     
-      fab: false,
-    fav: true,
-    menu: false,
-    message: false,
-    hints: true,
-    phone: '5521997642382',
-    text: "",
-    apilink: ""
-  }),
-  watch: {
-		text() {
-			this.apilink = 'http://';
-      this.apilink += this.isMobile() ? 'api' : 'web';
-      this.apilink += '.whatsapp.com/send?phone=' + this.phone + '&text=' + encodeURI(this.text);
-		}
-	},
-  created: function () {
-    this.apilink = 'http://';
-    this.apilink += this.isMobile() ? 'api' : 'web';
-    this.apilink += '.whatsapp.com/send?phone=' + this.phone + '&text=' + encodeURI("Hello!");
-  },
-	methods: {
-    isMobile() {
-      var check = false;
-      (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw(n|u)|c55\/|capi|ccwa|cdm|cell|chtm|cldc|cmd|co(mp|nd)|craw|da(it|ll|ng)|dbte|dcs|devi|dica|dmob|do(c|p)o|ds(12|d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(|_)|g1 u|g560|gene|gf5|gmo|go(\.w|od)|gr(ad|un)|haie|hcit|hd(m|p|t)|hei|hi(pt|ta)|hp( i|ip)|hsc|ht(c(| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i(20|go|ma)|i230|iac( ||\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|[a-w])|libw|lynx|m1w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|mcr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|([1-8]|c))|phil|pire|pl(ay|uc)|pn2|po(ck|rt|se)|prox|psio|ptg|qaa|qc(07|12|21|32|60|[2-7]|i)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h|oo|p)|sdk\/|se(c(|0|1)|47|mc|nd|ri)|sgh|shar|sie(|m)|sk0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h|v|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl|tdg|tel(i|m)|tim|tmo|to(pl|sh)|ts(70|m|m3|m5)|tx9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas|your|zeto|zte/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
-      return check;
-    }
-  },
-       sendEmail(){
-
- window.open('https://mail.google.com/mail/?view=cm&fs=1&to=lamenacecoatch@yahoo.fr')
-      },
-
-
-      
-     
-    }
+    })}
   
 
 </script>
 <style >
-.my-input.v-input .v-input__slot {
-  border-radius: 100px;
-}
-.chat-background {
-  background-color: #ECE5DD !important
-}
-.chat-header {
-  background-color: #075E54 !important
-}
-.chip-chat {
-  background-color: #DCF8C6 !important
-}
-
+    .chat{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 30px;
+      font-style: italic;
+      font-weight: 40px;
+     text-align: center
+      
+    }
 </style>

@@ -6,7 +6,7 @@
             <v-col>
                 
                 <div class="text-center white--text">
-                   <v-btn rounded ><router-link to="/contact" >Contact US</router-link></v-btn>
+                  <v-btn  class="red ligne2" rounded :to="`/${$i18n.locale}/contact`">{{$t('Contact  US')}}</v-btn>
                 </div>       
             </v-col>
           </v-row>

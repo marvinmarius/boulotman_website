@@ -11,9 +11,15 @@
               
              
                 >
-        <v-app-bar-nav-icon @click.stop="sidebarMenu = !sidebarMenu"></v-app-bar-nav-icon>
+                <div class="hidden-lg-and-up">
+                  <v-app-bar-nav-icon  @click.stop="sidebarMenu = !sidebarMenu"
+                   class="flex items-center px-3 py-2 border rounded border-gray-500 hover:text-gray-600 hover:border-gray-600">
+                    </v-app-bar-nav-icon>
+                    </div>
+        
 
-   <v-img
+        <router-link :to="`/${$i18n.locale}`" class="font-bold text-xl flex items-end">
+             <v-img
           alt="boulotman Logo"
           class="shrink mr-2"
           contain
@@ -21,10 +27,14 @@
           transition="scale-transition"
           width="100"
     />
+            
+          </router-link>
+
+  
     
     <v-spacer></v-spacer>
                                              
-
+    
           <v-toolbar-title class="hidden-sm-and-down justify-space-between ">
        
         
@@ -34,14 +44,15 @@
       <v-btn :to="`/${$i18n.locale}/categories`">{{$t('nav.CATEGORIES')}}</v-btn>
       <v-btn :to="`/${$i18n.locale}/rrr`">{{$t('nav.BLOG')}}</v-btn>
       <v-btn :to="`/${$i18n.locale}/step`">{{$t('nav.FAQ')}}</v-btn>
-      
+     
     </v-toolbar-title>
-      <LanguageSwitcher/>
+      
   <v-spacer></v-spacer>
 
          
          <v-btn rounded @click="toggleTheme" color="primary" class="mr-2">{{buttonText}}</v-btn>
-          
+
+           <LanguageSwitcher class="pt-6 mt-6"/>
      </v-app-bar>
 <v-card>
   <v-navigation-drawer 

@@ -23,6 +23,10 @@
     "texto": "Cette page vous permettra de fournir les informations nécessaires qui nous permettrons de vous localiser rapidement. commencez par specifier le type de service si c'est ce dont vous avez besoin , ensuite remplir correctement le formulaire et dans le dernier champ 'specifier vos besoins ici', décrivez exactement en quelque phrase ce dont vous avez besoin.",  
     "Contact US": "Contactez nous",
     "select": "selectionnez un type de service",
+    "whatsapp": "Par WhatsApp",
+    "ser":"A Propos de ce service",
+    "mail": "Par Email",
+    "chat": "Avez-vous une question? S'il vous plait n'ésitez pas à nous contacter directement. utilisez les liens ci-dessous",
     "theme": {
       "Dark Mode":"Mode Sombre",
       "Light Mode":"Mode Clair"

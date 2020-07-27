@@ -1,12 +1,24 @@
 <template>
 
   <v-container fluid class="bg-dark-gray" >
-<div class="align-center ml-10 flex   ">
+
+    <div class="align-center ml-10 flex   ">
   
   
   <v-col cols="12">
-    <h3  v-html="$t('texto')">
-   </h3>
+    <p class="categories text-decoration-underline">{{$t('ser')}}</p>
+    <p >
+      {{services.description}}
+   </p>
+
+  </v-col>
+    </div>
+<div class="align-center ml-10 flex">
+  
+  
+  <v-col cols="12">
+    <h4 v-html="$t('texto')">
+   </h4>
 
   </v-col>
 </div>
@@ -63,9 +75,10 @@
               :label= "$t('FirstName')"
               append-icon="mdi-account"
               required
+              
               outlined
               rounded
-              class="required"
+              class="required "
             ></v-text-field>
             
           </v-col>

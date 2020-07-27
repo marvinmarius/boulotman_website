@@ -23,6 +23,10 @@
   "texto": "This page will allow you to provide the necessary information that will allow us to locate you quickly, start by choosing the type of service if it is what you need then fill in the for correctly and in the last field specify your requirement here, describe exactly in some sentence what you need." ,
   "Contact US": "Contact US",
   "select": "select a kind of service",
+  "chat": " Do you have any question? Please do not hesitate to contact us directly. use the links below",
+  "whatsapp": "By WhatsApp",
+  "ser":"About this service",
+  "mail": "By email  ",
   "theme": {
     "Dark Mode":"Dark Mode",
     "Light Mode":"Light Mode"
