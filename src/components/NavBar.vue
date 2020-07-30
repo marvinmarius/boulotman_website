@@ -4,19 +4,18 @@
                 <v-app-bar app  dark fade-img-on-scroll
                prominent
               clipped-left
-               src="../assets/tree-nature-isolated-lone-free-photo-on-pixabay-png-nature-960_650.png"
+               src="../assets/home.jpg"
                hide-on-scroll
-               height="100"
+               height="120"
                fixed
               
              
                 >
-                <div class="hidden-lg-and-up">
-                  <v-app-bar-nav-icon  @click.stop="sidebarMenu = !sidebarMenu"
-                   class="flex items-center px-3 py-2 border rounded border-gray-500 hover:text-gray-600 hover:border-gray-600">
-                    </v-app-bar-nav-icon>
-                    </div>
-        
+                
+                <v-app-bar-nav-icon  @click.stop="sidebarMenu = !sidebarMenu" class="hidden-md-and-up">
+               
+                </v-app-bar-nav-icon>
+               
 
         <router-link :to="`/${$i18n.locale}`" class="font-bold text-xl flex items-end">
              <v-img
@@ -26,69 +25,133 @@
           src="../assets/boulotmanlogo.png" 
           transition="scale-transition"
           width="100"
-    />
-            
+    />    
           </router-link>
-
-  
-    
+          
     <v-spacer></v-spacer>
-                                             
-    
-          <v-toolbar-title class="hidden-sm-and-down justify-space-between ">
-       
-        
-      <v-btn :to="`/${$i18n.locale}`">{{$t('nav.Home')}}</v-btn>
-      <v-btn :to="`/${$i18n.locale}/services`" >{{$t('nav.SERVICES')}}</v-btn>
-      <v-btn  :to="`/${$i18n.locale}/about`">{{$t('nav.ABOUT US')}}</v-btn>
-      <v-btn :to="`/${$i18n.locale}/categories`">{{$t('nav.CATEGORIES')}}</v-btn>
-      <v-btn :to="`/${$i18n.locale}/rrr`">{{$t('nav.BLOG')}}</v-btn>
-      <v-btn :to="`/${$i18n.locale}/step`">{{$t('nav.FAQ')}}</v-btn>
+
+              <v-toolbar-items class="mt-9 hidden-sm-and-down">
+                <nav class="items-center mb-1 mt-10 ">                                  
+    <ul>
+      <li class="mr-1 mb-2  lg:mb-0 ">
+            <v-btn text exact :to="`/${$i18n.locale}`">{{$t('nav.Home')}}</v-btn>
+      </li>
+      <li class="mr-1 mb-2 lg:mb-0">
+      <v-btn text exact :to="`/${$i18n.locale}/services`" >{{$t('nav.SERVICES')}}</v-btn>
+      </li>
+      <li class="mr-1 mb-2 lg:mb-0">
+      <v-btn text exact :to="`/${$i18n.locale}/about`">{{$t('nav.ABOUT US')}}</v-btn>
+      </li>
+       <li class="mr-1 mb-2 lg:mb-0">
+      <v-btn text exact :to="`/${$i18n.locale}/categories`">{{$t('nav.CATEGORIES')}}</v-btn>
+      </li>
+       <li class="mr-1 mb-2 lg:mb-0">
+      <v-btn text exact :to="`/${$i18n.locale}/rrr`">{{$t('nav.BLOG')}}</v-btn>
+      </li>
+       <li class="mr-1 mb-2 lg:mb-0">
+      <v-btn text exact :to="`/${$i18n.locale}/step`">{{$t('nav.FAQ')}}</v-btn>
+      </li>
+      <li class="mb-1 lg:mb-0 mb-2">
+            <LanguageSwitcher/>
+        </li>
+          
+    </ul>
      
-    </v-toolbar-title>
-      
+            </nav>
+              </v-toolbar-items>
+
   <v-spacer></v-spacer>
 
          
          <v-btn rounded @click="toggleTheme" color="primary" class="mr-2">{{buttonText}}</v-btn>
 
-           <LanguageSwitcher class="pt-6 mt-6"/>
+          
      </v-app-bar>
 <v-card>
   <v-navigation-drawer 
           v-model="sidebarMenu" 
-        app
+       
          fixed
          clipped
-          :permanent="sidebarMenu"
          
-          disable-resize-watcher
-          disable-route-watcher
-          expand-on-hover
          
-          class=" flex fill-height brown"
+        
           
-          
+        
          
-          
-          
+          class=" flex fill-height brown hide"
+
           >
-            <v-list dense class="pt-3">
+            
 
-               
-                <v-list-item v-for="item in items" :key="item.title" link :to="item.href">
+               <v-list >
+                    <v-list-item class="items">
                     <v-list-item-icon>
-                        <v-icon >{{ item.icon }}</v-icon>
+                       <v-icon size="24px" left>mdi-home-outline</v-icon>
                     </v-list-item-icon>
-                
-                    <v-list-item-content>
-                        <v-list-item-title class="text--white">{{ item.title }}</v-list-item-title>
-                    </v-list-item-content>
+                    <v-list-item-title >
+                        <router-link class="item" :to="`/${$i18n.locale}`">{{$t('nav.Home')}}</router-link>
+                    </v-list-item-title> 
+                </v-list-item>
 
+                <v-list-item class="items">
+                    <v-list-item-icon>
+                        <v-icon >mdi-toolbox-outline</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title >
+                        <router-link class="item" :to="`/${$i18n.locale}/services`" >{{$t('nav.SERVICES')}}</router-link>
+                    </v-list-item-title>                
+                </v-list-item>
+
+                  <v-list-item class="items">
+                    <v-list-item-icon>
+                        <v-icon >mdi-shield-account</v-icon>
+                    </v-list-item-icon>
+                        <v-list-item-title>
+                        <router-link  class="item" :to="`/${$i18n.locale}/about`">{{$t('nav.ABOUT US')}}</router-link>
+                    </v-list-item-title> 
+                </v-list-item>
+
+                  <v-list-item class="items">
+                    <v-list-item-icon>
+                        <v-icon >mdi-palette-swatch</v-icon>
+                    </v-list-item-icon>
+                        <v-list-item-title>
+                    <router-link  class="item" :to="`/${$i18n.locale}/categories`">{{$t('nav.CATEGORIES')}}</router-link>                       
+                    </v-list-item-title>    
+                  </v-list-item>
+
+                  <v-list-item class="items">
+                    <v-list-item-icon>
+                        <v-icon >mdi-account</v-icon>
+                    </v-list-item-icon>                
+                    <v-list-item-title >
+                        <router-link class="item" :to="`/${$i18n.locale}/rrr`">{{$t('nav.BLOG')}}</router-link>                       
+                    </v-list-item-title>                   
+                  </v-list-item>
+
+                  <v-list-item class="items">
+                    <v-list-item-icon>
+                        <v-icon >mdi-frequently-asked-questions</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title >
+                        <router-link class="item" :to="`/${$i18n.locale}/step`">{{$t('nav.FAQ')}}</router-link>    
+                    </v-list-item-title>
                     
                 </v-list-item>
+
+                 <v-list-item class="items">
+                    <v-list-item-icon>
+                        <v-icon >mdi-web</v-icon>
+                    </v-list-item-icon>
+                        <v-list-item-title class="ml-n6"> 
+                        <LanguageSwitcher />
+                    </v-list-item-title>
+                </v-list-item>
                   
-          </v-list>
+               </v-list>
+               
+          
          
     </v-navigation-drawer>
 </v-card>
@@ -100,6 +163,7 @@
 
 <script>
 import LanguageSwitcher from '../components/LanguageSwitcher'
+
 export default {
     name: 'Navbar',
     components:
@@ -132,7 +196,7 @@ export default {
   },
 data: () => ({
       sidebarMenu: false,
-      toggleMini: false,
+     clipped: false,
       
      
       
@@ -142,6 +206,59 @@ data: () => ({
 </script>
 <style scoped>
 
+
+.item:hover{
+  color:blue;
+}
+
+
+.li{
+  color: black
+}
+.item{
+   text-decoration-style: none;
+  text-decoration: none;
+   color: black;
+  font: bold;
+}
+ul{
+    list-style: none;
+  
+   display: inline-block;
+
+
+   font: bold;
+ 
+  
+   
+ 
+ 
+
+  }
+  nav ul li {
+   position: relative;
+    transition: .2s ease-in-out;
+    
+    
+  }
+
+li{
+  display: inline;
+     margin: 0;
+   padding: 0;
+  
+}
+
+
+ul li:hover{
+  color:  blue;
+  background-color: brown;
+  border-radius: 10px
+   
+}
+ul li:active{
+  color: red;
+}
 
 </style>
     

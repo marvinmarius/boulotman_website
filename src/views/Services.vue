@@ -7,7 +7,7 @@
           <div class="flex justify-center"
           >
          
-         <h1 class="categories"> services of {{category.name}} category</h1>
+         <h1 class="categoriess"> services of {{category.name}} category</h1>
           </div>
         </v-col>
     </v-row>
@@ -15,11 +15,11 @@
   <v-divider ></v-divider>
         <v-flex class="pt-4 mt-4">
          <v-row dense >
-    <v-col cols="12" sm="4" md="4" 
+    <v-col cols="12" sm="4" md="3" 
     v-for="service in category.services"
-    :key="service.id">
+    :key="service.id"  >
 
-      <v-card outlined shaped  flat >
+      <v-card outlined shaped class="ma-3" >
 
     <v-img
       class="align-center"
@@ -29,18 +29,15 @@
     ></v-img>
 
               <v-card-text class="text-center">
-                <p><strong>{{service.name}}</strong></p>
+                <p ><strong>{{service.name}}</strong></p>
                   <p class="red--text">{{service.sub_services_count}} sub-services </p>
                 
-                <p class=" text-truncate">  {{service.description}}</p>
+                <p class="  hint">  {{service.hint}}</p>
               </v-card-text>
               <v-card-actions>
                  
-                <div class="text-center mx-auto bg-black">
-                   
-                    <v-btn :to="{name: 'service', params:{id:service.slug}}"  rounded color="teal accent-3" >BOOK</v-btn>
-                  
-                 
+                <div class="text-center mx-auto bg-black"> 
+                    <v-btn :to="{name: 'service', params:{id:service.slug}}"  rounded color="teal accent-3" v-html= "$t('bookk')"></v-btn>
                 </div>
               </v-card-actions>
           </v-card>
@@ -94,5 +91,14 @@ return this.getServicesOfParticularCategory(this.id).services
     text-transform: capitalize;
     font-weight: 600;
     font-size: 40px
+}
+.hint{
+  
+  font-size: 15px; 
+}
+
+.ide{
+ 
+  font-size: 18px;
 }
 </style>

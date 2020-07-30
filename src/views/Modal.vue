@@ -2,10 +2,10 @@
   <v-layout row  justify="center">
     <v-dialog v-model="dialog"  persistent max-width="600px">
     
-             <v-card class="justify-center ">
+             <v-card dark class="justify-center ">
  
           <v-card-title>
-              <marquee direction="left" behavior="scroll" scrollamount="10"><h1 class="red--text">COMMING SOON </h1></marquee>
+              <marquee direction="left" behavior="scroll" scrollamount="10"><h1 class="red--text">{{$t('COMMING SOON !!!')}} </h1></marquee>
            
      
           </v-card-title>
@@ -14,7 +14,7 @@
           </v-card-text>
         <v-card-actions>
           
-          <v-btn right color="red" @click="dialog = false">EXIT</v-btn>
+          <v-btn right color="red" @click="$router.push('/')">OK</v-btn>
         </v-card-actions>
       
              </v-card>

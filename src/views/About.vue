@@ -1,12 +1,12 @@
 <template>
-<v-flex>
-  <div class="row" >
+<v-container fluid>
+  <div class="row mt-n9" >
 <v-img  src="../assets/Perm2_ContactUs-1024x376.png" max-height="400px">
           <v-row align="end" class="lightbox white--text pa-2 fill-height">
             <v-col>
                 
-                <div class="text-center white--text">
-                  <v-btn  class="red ligne2" rounded :to="`/${$i18n.locale}/contact`">{{$t('Contact  US')}}</v-btn>
+                <div class="text-center white--text ">
+                  <v-btn  class="red mb-n5" rounded :to="`/${$i18n.locale}/contact`">{{$t('Contact  US')}}</v-btn>
                 </div>       
             </v-col>
           </v-row>
@@ -14,7 +14,12 @@
   </div>
 
     
-<div class="block">
+<div class="block pt-8">
+    <v-col cols="12" >
+        <h1 class="team">{{$t('WHO WE ARE?')}}</h1>
+    
+   </v-col>
+   
 
               <v-container>  
             <p>   Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus
@@ -26,16 +31,17 @@
           </v-container>
   
 </div>
+<v-divider></v-divider>
 
-<div class="block">
-    <v-container>
+
       
- <v-layout class="pb-4 mb-6">
-   <v-flex >
-        <h1 class="team">OUR TEAM</h1>
+
+   <v-col cols="12" >
+        <h1 class="team">{{$t('OUR TEAM')}}</h1>
     
-   </v-flex>
- </v-layout>
+   </v-col>
+   
+
     
   <v-row  class="flex fill-height ">
     <v-col cols="12" sm="4"
@@ -74,12 +80,12 @@
       </v-hover>
             </v-col>
           </v-row>
-    </v-container>
-</div>
+    
+
      
 
 
-</v-flex>
+</v-container>
 
 </template>
 
@@ -119,7 +125,7 @@
 .team{
     text-align: center;
   text-justify: auto;
-  font-family: Lobster Two,cursive;
+ 
     text-transform: capitalize;
     font-weight: 600;
     font-size: 40px

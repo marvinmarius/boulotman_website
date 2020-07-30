@@ -10,6 +10,7 @@
   },
   "CATEGORIES OF SERVICES": "CATEGORIES OF SERVICES",
   "Home": "home", 
+  
   "EXPLORE": "explore",
   "All Rights Reserved": "All Rights Reserved",
   "Socials": "Socials",
@@ -27,6 +28,8 @@
   "whatsapp": "By WhatsApp",
   "ser":"About this service",
   "mail": "By email  ",
+  "conditions": "you must read and agree to continue",
+  "condition": "I have read and I accept",
   "theme": {
     "Dark Mode":"Dark Mode",
     "Light Mode":"Light Mode"
@@ -41,19 +44,23 @@
   "city" : "city",
   "date" : "date",
   "time" : "time",
+  
   "call":"I Would you like to received call from",
   "successful": "From the information you have provided, our team will contact you as soon as possible for an appointment",
   "address": "address",
+  "requirement": "requirements succesfully submited",
   "book" : "BOOK NOW",
+  "bookk": "BOOK",
   "reset": "RESET",
   "success": "Your requirements have been successfully submited.",
   "requirements": "Specify your requirements here",
   "neighbourhood": "neighbourhood",
-  "thank you for trusting us. ": "thank you for trusting us. ",
+  "thank you for trusting us. ": "Thank you for trusting us. ",
   "e.g: bonandjo, located 50m from BEAC": "e.g: bonandjo, located 50m from BEAC",
     
   "Customers": "Customers",
-
+"WHO WE ARE?":"WHO WE ARE?",
+"OUR TEAM":  "OUR TEAM",
 
   "form":{
     "title": "Please Fill the form below in order to provide your requirements for:"
@@ -61,7 +68,7 @@
   "items": 
 
     {
-     
+      "titlet": "Book a Technician today",
       "title": "Use the link bellow to Contact us",
       "titles": "Satisfaction guaranteed",
       "titlea": "Anytime, Anywhere , we are available to serve you"

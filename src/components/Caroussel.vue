@@ -24,13 +24,13 @@
 <v-row class="justify-center">
   
          <v-col 
-          class="fill-height ligne"
+          class="fill-height "
           align="center"
           justify="center"
           
         >
     
-                     <div class="text-center justify-center">
+                     <div class="text-center justify-center mb-n9">
                       
    <h1 class="ligne "> {{ item.title }}</h1>
         </div>
@@ -72,7 +72,10 @@ return [
             src: require('../assets/new1 plomberie.jpg'),
             title: this.$t('items.title')
           },
-      
+          {
+            src: require('../assets/background-images-for-registration-page-12.jpg'),
+            title: this.$t('items.titlet')
+          },
          
            {
             src: require('../assets/construction 5.jpg'),
@@ -98,7 +101,7 @@ return [
 .ligne{
   color: bisque;
         background-size: cover;
-       font-family: cursive;
+      
     float: left;
    padding-top: 160px;
     position: relative;

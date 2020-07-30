@@ -9,10 +9,12 @@ import VModal from 'vue-js-modal'
 import ToggleButton from 'vue-js-toggle-button'
 import VueTelInputVuetify from 'vue-tel-input-vuetify/lib';
 
+
 Vue.use(VueTelInputVuetify, {vuetify,});
 Vue.use(ToggleButton)
 Vue.use(VueFuse)
 Vue.use(VModal)
+
 
 
 

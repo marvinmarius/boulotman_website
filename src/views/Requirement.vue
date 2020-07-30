@@ -1,29 +1,31 @@
-<template>
+<template >
 
-  <v-container fluid class="bg-dark-gray" >
-
-    <div class="align-center ml-10 flex   ">
-  
-  
-  <v-col cols="12">
-    <p class="categories text-decoration-underline">{{$t('ser')}}</p>
-    <p >
-      {{services.description}}
-   </p>
-
-  </v-col>
-    </div>
+  <v-container fluid > 
+ 
+       
+   
 <div class="align-center ml-10 flex">
-  
-  
   <v-col cols="12">
-    <h4 v-html="$t('texto')">
+  <v-alert
+      text
+      prominent
+     
+      border="bottom"
+      color="green"
+      type="info"
+     
+    >
+     <h4 v-html="$t('texto')">
    </h4>
+  </v-alert>
+  
+   
 
   </v-col>
 </div>
 <v-divider></v-divider>
-<div class=" ml-10">
+
+    <div class=" ml-10 mb-2">
     <v-col cols="12" sm="6" md="5"  
    
     >
@@ -49,19 +51,20 @@
       
       </v-select>
         </v-col>
-        
-    <v-divider></v-divider>
-
-     <v-card dark width="800" class=" justify-md-space-around ml-2 mt-4">
-        <v-card-title class="justify-center green" > {{$t('form.title')}} <div><h3 class="text--red mr-4" >{{this.$route.params.id}}</h3></div>
-           </v-card-title>
+    </div>
+    
+<v-row class="justify-space-between">
+  <v-col>
+     <v-card dark width="800" class=" ml-10 mt-4">
+        <v-card-title class="justify-center green" > {{$t('form.title')}}
+          <div><h3 class="text--red mr-4" >{{this.$route.params.id}}</h3></div>
+        </v-card-title>
     
         <v-card-text>
          
             <v-form class="align-content-center"
     ref="form"
     @submit.prevent="onSubmit"
-    
     v-model="valid"
     
   >
@@ -76,9 +79,10 @@
               append-icon="mdi-account"
               required
               
+              
               outlined
               rounded
-              class="required "
+              
             ></v-text-field>
             
           </v-col>
@@ -90,7 +94,7 @@
               :label= "$t('LastName')"
                 append-icon="mdi-account"
               required
-               class="required"
+              
               outlined
               rounded
               
@@ -115,7 +119,7 @@
         label="E-mail"
           append-icon="mdi-email"
         outlined
-         class="required"
+         
         required
         rounded
     ></v-text-field>
@@ -133,12 +137,12 @@
     click
     append-icon="mdi-phone"
     :label= "$t('phone')"
-    maxLen="9"
+    maxLen=9
     :valid-characters-only="true"
           :value="customer.phone_number"  
              v-model="customer.phone_number"
              required
-              class="required"
+             
              rounded
               outlined 
             
@@ -149,34 +153,34 @@
           
      </v-row>
     
-    <v-col cols="12" sm="6" md="5" class=" offset-4 green--text  text-uppercase" v-html="$t('where do you require this service ? ')"> </v-col>
+    <v-col cols="12" sm="6" md="5" class=" offset-3 green--text  text-uppercase" v-html="$t('where do you require this service ? ')"> </v-col>
          <v-row justify="space-between" xs12 lg6>
        <v-col cols="12" sm="6" md="5">
         <v-text-field
-        v-model="customer.city"
+        v-model="order.city"
       placeholder="ex: Bamenda"
         append-icon="mdi-map-marker"
         :label= "$t('city')"
         outlined
-        required
+      
     
         rounded
     ></v-text-field>
        </v-col>
     <v-col cols="12" sm="6" md="5">
         <v-text-field
-        v-model="customer.neighbourhood"
+        v-model="order.neighbourhood"
         :placeholder= "$t('e.g: bonandjo, located 50m from BEAC')"
         append-icon="mdi-crosshairs-gps"
         :label= "$t('neighbourhood')"
         outlined
-        required 
+      
         rounded
     ></v-text-field>
        </v-col>
       
          </v-row>
-         <v-col cols="12" sm="6" md="5" class=" offset-4 green--text  text-uppercase" v-html="$t('when do you require this service ? ')"> </v-col>
+         <v-col cols="12" sm="6" md="5" class=" offset-3 green--text  text-uppercase" v-html="$t('when do you require this service ? ')"> </v-col>
     <v-row justify="space-between" xs12 lg6>
      
     <v-col cols="12" sm="6" md="5">
@@ -279,7 +283,40 @@
         
         rows="2"
       ></v-textarea>
-      
+      <v-row>
+         <v-col cols="12"   > </v-col>
+        <v-col cols="12" >
+<p class=" offset-3 green--text  text-uppercase" v-html="$t('conditions')"></p>
+          <v-card class="overflow-y-auto" height="200" outlined shaped loading="true" >
+        <v-card-title class="title justify-center">Terms & Conditions</v-card-title>
+        <v-card-text class="justify-center">
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at 
+            nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec 
+            tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget 
+            nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+             per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim 
+             lacinia nunc.</p>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+         <v-checkbox
+              v-model="checkb"
+              color="green"
+             :rules="ckeckRules" 
+            >
+              <template v-slot:label>
+                <div >{{$t('condition')}}
+                
+                </div>
+              </template>
+                 
+            </v-checkbox>
+        </v-card-actions>
+      </v-card>
+        </v-col>
+      </v-row>
+
   </v-form>
         
         </v-card-text>
@@ -297,46 +334,54 @@
      
     </v-btn>
           
-             <v-btn class="mr-4" rounded color="success" :disabled="!valid" @click="onSubmit" v-html= "$t('book')"> </v-btn>
+      <v-btn class="mr-4" rounded color="success" :disabled="!valid" @click="onSubmit" v-html= "$t('book')"> </v-btn>
         </v-card-actions>
       </v-card>
-       
-      </div>
-
-
-      <v-layout row  justify="center">
-    <v-dialog v-model="this.modal.dialog"  persistent max-width="800px">
-    
-             <v-card class="justify-center " dark>
+  </v-col>
+  <v-col cols="12" sm="4" md="4" >
+     <v-card class="justify-center " flat >
  
           <v-card-title>
-              <marquee direction="left" behavior="scroll" scrollamount="10"><h1 class="green--text">
-               success!!!  </h1></marquee>
-           
-        <p class="green--text justify-center" v-html= "$t('success')"></p>
+      <p class="categorie text-decoration-underline">{{$t('ser')}}</p>
           </v-card-title>
-          <v-card-text>
+       
               
-              <v-card-title>
-                  <p class="text-uppercase  font-italic" >
-                  {{this.customer.first_name}}   {{this.customer.last_name}} </p>
-              <p class="justify-center" >{{ this.$t('successful')}}
-              </p>
-              <br>  {{ this.$t('thank you for trusting us. ') }} 
-              </v-card-title>
-             
-               
+          <v-card-text>
+      <p  class="justify-center category">{{services.description}}</p>
           </v-card-text>
-        <v-card-actions>
-          
-          <v-btn right color="red" @click="accepted">OK</v-btn>
-        </v-card-actions>
-      
-             </v-card>
-    </v-dialog>
-    
-  </v-layout>
+     </v-card>
+  </v-col>
+  
+</v-row>
 
+
+    
+      <v-dialog v-model="this.modal.dialog"  persistent max-width="800px">
+    
+          <v-card class="justify-center " dark>
+ 
+              <v-card-title>
+                  <marquee direction="left" behavior="scroll" scrollamount="10"><h1 class="green--text">
+                  Succès !!!<span> <v-icon dark>mdi-checkbox-marked-circle</v-icon></span>  </h1></marquee>
+                  <p class="green--text justify-center" v-html= "$t('success')"></p>
+              </v-card-title>
+              
+              <v-card-subtitle>
+                  <p class="category  font-italic" >
+                     MR(s) {{this.customer.first_name}}   {{this.customer.last_name}}
+                  </p>
+              </v-card-subtitle>
+                
+              <v-card-text>
+                  <p class="justify-center" >{{ this.$t('successful')}}</p>
+                  <br>  {{ this.$t('thank you for trusting us. ') }}  
+              </v-card-text>
+              <v-card-actions >
+              <v-btn class="mr-10 justify-center" color="success" @click="accepted">OK</v-btn>
+              </v-card-actions>
+      
+          </v-card>
+    </v-dialog>
     </v-container>
   
 
@@ -348,6 +393,7 @@
 //import HelperQuestion from '../components/HelperQuestion'
 import {mapGetters, mapState} from 'vuex'
 import moment from 'moment'
+//import backgroundUrl from '../assets/'
 export default {
   name:'Requirement',
 
@@ -359,11 +405,11 @@ export default {
 
 data(){
       return {
-
+        //backgroundUrl,
         id: this.$route.params.id,
-   
+        checkb: false,
          selectedItem:'',
-       
+       terms: false,
    select: '',
       
       valid: false,
@@ -373,13 +419,12 @@ data(){
           first_name: '',
           last_name: '',
           phone_number:'',
-          city: '',
-          neighbourhood:'',
           email:'',
          
         },
         order:{
-          address:'',
+          city: '',
+          neighbourhood:'',
           date:'',
           time:'',
           calling_period:'',
@@ -413,7 +458,9 @@ data(){
      minDate: "2020-01-05",
      maxDate: "2019-08-30",
       
-    
+      ckeckRules:[
+        v => !!v || 'You must  accept to continue!'
+      ],
       emailRules: [
         v => !!v || 'E-mail is required',
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
@@ -453,6 +500,10 @@ data(){
     
 methods:{
   
+  read(){
+      this.terms = false
+      this.checkb = true
+  },
 
   //acceptNumber() {
    //var x = this.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,3})/);
@@ -540,7 +591,27 @@ methods:{
  
 }
 </script>
-<style  >
+<style scoped>
+
+.categorie{
+  text-align: center;
+  text-justify: auto;
+
+    
+    font-weight: 600;
+    font-size: 30px
+}
+
+.category{
+  text-align: left;
+  text-justify: newspaper;
+
+    
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+
 
 .required::after{
 content: "*";

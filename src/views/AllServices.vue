@@ -1,11 +1,15 @@
 <template>
 <v-container fluid>
+  <v-overlay  :opacity="1"
+      :value="overlay">
+      <v-progress-circular indeterminate size="64">loading...</v-progress-circular>
+    </v-overlay>
  <v-flex>
         <v-col cols="12">
           <div class="justify-center"
           >
          
-         <h1 class="categories"> ALL THE AVAILLABLE SERVICES</h1>
+         <h1 class="categoriess"> ALL THE AVAILLABLE SERVICES</h1>
           </div>
         </v-col>
     </v-flex>
@@ -15,11 +19,11 @@
   
    
          <v-row dense >
-    <v-col cols="12" sm="4" md="4"  
+    <v-col cols="12" sm="4" md="3"  
     v-for="allservice in allservices"
     :key="allservice.id"
     >
-      <v-card outlined shaped class="mx-auto">
+      <v-card outlined shaped class="ma-3">
   
   
     <v-img
@@ -30,14 +34,17 @@
 
               <v-card-text class="text-center">
                 <p><strong>{{allservice.name}}</strong></p>
-                  <p class="text-truncate">{{allservice.description}}</p>
+                 <p class="red--text">{{allservice.sub_services_count}} sub-services </p>
+                  <p class="hint">{{allservice.hint}}</p>
               </v-card-text>
               <v-card-actions>
-                <div class="text-center mx-auto">
+                <div class="text-center mx-auto bg-black">
                   
-             <router-link :to="{name: 'service', params:{id:allservice.slug}}">
-                    <v-btn rounded color="teal accent-3" >BOOK </v-btn>
-                    </router-link>
+             
+                    <v-btn  :to="{name: 'service', params:{id:allservice.slug}}" rounded color="teal accent-3" v-html= "$t('bookk')" >
+                    
+                    </v-btn>
+                    
                 </div>
               </v-card-actions>
           </v-card>
@@ -51,6 +58,14 @@
 <script>
 import {mapGetters} from 'vuex'
   export default {
+    mounted(){
+      this.overlay = false
+   },
+
+     data: () => ({
+    overlay: true,
+    }),
+       inject: ['theme'],
     name:'AllServices',
 
 computed:{

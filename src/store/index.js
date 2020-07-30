@@ -243,11 +243,11 @@ export default new Vuex.Store({
   
   async preserveLocal({commit,dispatch}) {
       
-    let clients =  await JSON.parse(localStorage.getItem('clients'));
+    let clients =   JSON.parse(localStorage.getItem('clients'));
     commit('SET_FORM_DATA', clients);
   
   
-    let order = await JSON.parse(localStorage.getItem('order'));
+    let order =  JSON.parse(localStorage.getItem('order'));
     commit('SET_ORDER_DATA', order);
     dispatch('createCustomer')
 },
@@ -331,21 +331,20 @@ export default new Vuex.Store({
 },
 
   async createCustomer({commit, dispatch}){
-    try{
+    
 
-
-      let xy = JSON.parse(localStorage.getItem('clients')) 
-     let allcustomers = JSON.parse(localStorage.getItem('allcustomers')) 
+     
+     let allcustomers = this.state.allcustomers
+     let xy = this.state.clients
 
       for (var i = 0 ; i<allcustomers.length; i++){
-
-       if((allcustomers[i].email == xy.email) ||  (allcustomers[i].phone_number == xy.phone_number))
-        {
+        
+       if(allcustomers[i].email == xy.email) {
         let  customer = allcustomers[i]
          localStorage.setItem('customer',JSON.stringify(customer.id))
          commit('ADD_NEW_CUSTOMER', customer)
          dispatch('createOrderInfos')
-        }
+        }else{
         let response = await Api.post('/customers/new/', xy)
         let customer = response.data
         localStorage.setItem('customer', JSON.stringify(customer.id))
@@ -353,40 +352,9 @@ export default new Vuex.Store({
         dispatch('createOrderInfos')
         
       }
-        
-       
-        
-     
-     
-      //if(localStorage.getItem('customer') !== null  ) {
-        //let job = JSON.parse(localStorage.getItem('job'));
-       // let service = JSON.parse(localStorage.getItem('service'));
-       // let sub_service = JSON.parse(localStorage.getItem('sub_service'));
-        //let quizzes = JSON.parse(localStorage.getItem('quizzes'));
-        //let info = JSON.parse(localStorage.getItem('info'));
-        //let custo = JSON.parse(localStorage.getItem('customer'));
-        //let custom = JSON.parse(localStorage.getItem('customer'))
-        //this.state.object.customer = custom
-        //this.state.object.info = info
-        //this.state.object.customer = custo
-        //this.state.object.sub_service = sub_service
-        //this.state.object.service = service
-        //this.state.object.quizzes = quizzes
-        //let i = new Date().toJSON().slice(0,10).replace(/-/g,'/') 
-        //this.state.object.creation_date = i
-        //localStorage.setItem('Job',  JSON.stringify(this.state.object))
-        
-      //}
-     // let jobRequest = JSON.parse(localStorage.getItem('Job'))
-      //commit('SET_JOB_DATA', jobRequest)
-     
-      
-    
- 
-    }catch(e){
-      console.error(e);
-     
     }
+ 
+    
 },
 
  
@@ -429,8 +397,7 @@ setSnackbar({commit}, snackbar){
  
   if(localStorage.getItem('jobRequest') !== null  ) {
     return this.state.snackbar.showing = true
-   
-    
+
   }
   // snackbar.showing = true
   // this.state.snackbar.text = 'there is an error'

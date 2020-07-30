@@ -26,6 +26,10 @@
     "whatsapp": "Par WhatsApp",
     "ser":"A Propos de ce service",
     "mail": "Par Email",
+    "bookk": "RESERVER",
+    "requirement": "exigences envoyée avec succès",
+    "condition": "j'ai lu et j'accepte",
+    "conditions" : "vous devez lire et accepter pour continuer",
     "chat": "Avez-vous une question? S'il vous plait n'ésitez pas à nous contacter directement. utilisez les liens ci-dessous",
     "theme": {
       "Dark Mode":"Mode Sombre",
@@ -42,13 +46,13 @@
     "city" : "ville",
     "neighbourhood": "Quartier",
     "e.g: bonandjo, located 50m from BEAC": "ex: bonandjo, situé à  50m de:",
-    
+  
     "date" : "Date",
     "time" : "Heure",
     "book" : "Reserver maintenant",
     "reset": "réinitialiser",
-    "success": "vos exigences ont été soumise avec succès.",
-    "thank you for trusting us. ": "merci de nous faire confiance. ",
+    "success": " Vos exigences ont été soumise avec succès.",
+    "thank you for trusting us. ": "Merci de nous faire confiance. ",
     "successful": "A partir des informations que vous nous avez fournies, notre équipe vous contactera dans les plus brefs délais pour un rendez-vous",
     "call":"Je souhaite recevoir des appels à partir de: ",
     "address": "addresse",
@@ -56,11 +60,13 @@
       "title": "Veuillez remplir le formulaire ci-dessous afin de fournir vos exigences pour:"
     },
 
-
+    "WHO WE ARE?":"QUI SOMMES NOUS?",
+    "OUR TEAM": "NOTRE EQUIPE",
+    "COMMING SOON !!!":"Bientôt Disponible!!!",
     "items": 
 
     {
-     
+      "titlet": "Reserver un Technicien aujourd'hui",
       "title": "Utilisez le lien ci-dessous pour nous contacter",
       "titles": "Satisfaction guarantie",
       "titlea": "n'importe quand n'importe où, nous sommes là pour vous servir"

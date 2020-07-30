@@ -2,7 +2,7 @@
   <v-app >
   
     <NavBar/>
- 
+
   <v-main >
 
        <v-slide-y-transition mode="out-in">
@@ -37,7 +37,9 @@ import NavBar from './components/NavBar'
 import {mapState} from 'vuex'
 
 
+
 export default {
+  
   name: 'App',
 
 computed:{

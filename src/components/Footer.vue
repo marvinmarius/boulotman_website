@@ -14,14 +14,16 @@
             flat
            
           >
+          <router-link :to="`/${$i18n.locale}`" @click.native="scrollToTop">
             <v-img
           alt="boulotman Logo"
           class="shrink mr-2"
           contain
           src="../assets/boulotmanlogo.png" 
           transition="scale-transition"
-          width="220"
+          width="120"
     />
+          </router-link>
     
           </v-card>
         </v-col>
@@ -32,10 +34,10 @@
             tile
          
           >
-        <v-card-text class="justify-center"><h2 class="text-decoration-underline"><I>Socials</I></h2></v-card-text>
-        <v-list-item-group class="justify-center">
-        <p class="v-list-item--link"><v-icon size="24px" left>mdi-facebook</v-icon>Facebook </p>
-        <p class="v-list-item--link"><v-icon size="24px" left>mdi-google</v-icon>Google</p>
+        <v-card-text class="justify-center"><h2 class="text-decoration-underline">Socials</h2></v-card-text>
+        <v-list-item-group class="justify-center grp">
+        <p class="v-list-item--link"><v-icon  size="24px" left>mdi-facebook</v-icon>
+        <a   href="https://www.facebook.com/boulotman">Facebook</a>  </p>
         <p class="v-list-item--link"><v-icon size="24px" left>mdi-instagram</v-icon>Instagram</p>
         <p class="v-list-item--link"><v-icon size="24px" left>mdi-twitter</v-icon>Twitter</p>
         </v-list-item-group>
@@ -53,13 +55,30 @@
              
           >
               
-         <v-card-text class="justify-center"><h2 class="text-decoration-underline"><I>{{$t('Useful Links')}}</I></h2></v-card-text>
-    <v-list-item-group class="justify-center flex-column">
-            <p class="v-list-item--link"><v-icon size="24px" left>mdi-book-open-page-variant</v-icon>{{$t('About Us')}}</p>
-          <p class="v-list-item--link"><v-icon size="24px" left>mdi-home-circle</v-icon>{{$t('nav.Home')}}</p>
-          <p class="v-list-item--link"><v-icon size="24px" left>mdi-shield-lock-outline</v-icon>{{$t('Privacy Policy')}}</p>
-           <p class="v-list-item--link"><v-icon size="24px" left>mdi-electron-framework</v-icon>{{$t('Services')}}</p>
-           <p class="v-list-item--link"><v-icon size="24px" left>mdi-book-open</v-icon>{{$t('Terms & Conditions')}}</p>
+         <v-card-text class="justify-center"><h2 class="text-decoration-underline">{{$t('Useful Links')}}</h2></v-card-text>
+    <v-list-item-group class="justify-center flex-column grp">
+            <p class="v-list-item--link">
+              <v-icon size="24px" left>mdi-book-open-page-variant</v-icon>
+              <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/about`">
+              {{$t('About Us')}}
+              </router-link>
+              </p>
+          <p class="v-list-item--link">
+            <v-icon size="24px" left>mdi-home-circle</v-icon>
+            <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}`">{{$t('nav.Home')}}
+            </router-link>
+          </p>
+          <p class="v-list-item--link">
+            <v-icon size="24px" left>mdi-shield-lock-outline</v-icon>{{$t('Privacy Policy')}}</p>
+           <p class="v-list-item--link">
+             <v-icon size="24px" left>mdi-electron-framework</v-icon>
+             <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/services`" >
+            {{$t('Services')}}
+             </router-link>
+             </p>
+           <p class="v-list-item--link">
+             <v-icon size="24px" left>mdi-book-open</v-icon>{{$t('Terms & Conditions')}}
+            </p>
            
            
     </v-list-item-group>
@@ -77,10 +96,10 @@
             tile
            
           >
-       <v-card-text class="justify-center"><h2 class="text-decoration-underline"><I> {{ $t('Our Contacts')}}</I></h2></v-card-text>
-     <v-list-item-group class="justify-center">
+       <v-card-text class="justify-center"><h2 class="text-decoration-underline">{{ $t('Our Contacts')}}</h2></v-card-text>
+     <v-list-item-group class="justify-center grp">
           <p class="v-list-item--link font-smaller"><v-icon size="24px" left>mdi-email</v-icon>boulotman@gmail.com</p>
-         <p class="v-list-item--link font-smaller"><v-icon size="24px" left>mdi-phone</v-icon>(+237)000-000-000/(+237) xxx-xxx-xxx</p>
+         <p class="v-list-item--link font-smaller"><v-icon size="24px" left>mdi-phone</v-icon>(+237)000-000-000</p>
           <p class="v-list-item--link "><v-icon size="24px" left>mdi-phone-classic</v-icon>fix: 222-222-222</p>
      </v-list-item-group>
           </v-card>
@@ -110,8 +129,31 @@
   </v-container>
 
 </template>
+<script>
+export default {
+  methods:{
+     scrollToTop() {
+                window.scrollTo(0,0);
+           }
+  }
+}
+</script>
 
 <style scoped>
+.v-list-item--link a{
+ text-decoration: none;
+  color:black;
+  
+}
+.grp p {
+   
+ color:black;
+}
 
+.v-list-item--link a:hover{
+
+  color:blue;
+  
+}
 
 </style>
