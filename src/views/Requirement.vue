@@ -79,14 +79,14 @@
               append-icon="mdi-account"
               required
               
-              
+              class="label"
               outlined
               rounded
               
             ></v-text-field>
             
           </v-col>
-          <v-col cols="12" sm="6" md="5">
+          <v-col cols="12" sm="6" md="5" >
           <v-text-field
               v-model="customer.last_name"
             :counter="15"
@@ -94,7 +94,7 @@
               :label= "$t('LastName')"
                 append-icon="mdi-account"
               required
-              
+              class="label"
               outlined
               rounded
               
@@ -116,10 +116,10 @@
         <v-text-field
         v-model="customer.email"
         :rules="emailRules"
-        label="E-mail"
+      label="E-mail"
           append-icon="mdi-email"
         outlined
-         
+         class="label"
         required
         rounded
     ></v-text-field>
@@ -134,16 +134,19 @@
     default-country-code="+237"
     
     id="phone"
-    click
-    append-icon="mdi-phone"
+  
+   
     :label= "$t('phone')"
-    maxLen=9
+    
+    
+    
     :valid-characters-only="true"
           :value="customer.phone_number"  
              v-model="customer.phone_number"
              required
              
              rounded
+             class="label"
               outlined 
             
     ></vue-tel-input-vuetify>
@@ -283,39 +286,27 @@
         
         rows="2"
       ></v-textarea>
-      <v-row>
-         <v-col cols="12"   > </v-col>
-        <v-col cols="12" >
-<p class=" offset-3 green--text  text-uppercase" v-html="$t('conditions')"></p>
-          <v-card class="overflow-y-auto" height="200" outlined shaped loading="true" >
-        <v-card-title class="title justify-center">Terms & Conditions</v-card-title>
-        <v-card-text class="justify-center">
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-            Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at 
-            nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec 
-            tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget 
-            nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-             per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim 
-             lacinia nunc.</p>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-         <v-checkbox
+    <v-col cols="12">
+        <v-checkbox
               v-model="checkb"
               color="green"
              :rules="ckeckRules" 
             >
               <template v-slot:label>
-                <div >{{$t('condition')}}
-                
+                <div  >By clicking BOOK NOW, you agree to our
+                  <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/terms-and-conditions`" >
+                {{$t('Terms & Conditions')}}
+                 </router-link>
+                 and the <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/privacy-policy`" >
+                {{$t('Privacy Policy')}}</router-link>
                 </div>
               </template>
+               
+                  
                  
             </v-checkbox>
-        </v-card-actions>
-      </v-card>
-        </v-col>
-      </v-row>
+    </v-col>
+      
 
   </v-form>
         
@@ -338,6 +329,56 @@
         </v-card-actions>
       </v-card>
   </v-col>
+  <v-dialog v-model="dialog"  persistent max-width="900px">
+    
+             <v-card dark class="justify-center ">
+ 
+          <v-card-title>
+              
+           TERMS & USE
+     
+          </v-card-title>
+          <v-card-text>
+
+"But I must explain to you how all 
+this mistaken idea of denouncing pleasure and praising pain was born and I will 
+give you a complete account of the system, and expound the actual teachings of the great 
+explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, 
+or avoids pleasure itself, because it is pleasure, but because those who do not know how
+ to pursue pleasure rationally encounter consequences that are extremely painful. Nor again
+  is there anyone who loves or pursues or desires to obtain pain of itself, because it is 
+  pain, but because occasionally circumstances occur in which toil and pain can procure him
+   some great pleasure. To take a trivial example, which of us ever undertakes laborious
+    physical exercise, except to obtain some advantage from it? But who has any right to 
+    find fault with a man who chooses to enjoy a pleasure that has no annoying consequences,
+     or one who avoids a pain that produces no resultant pleasure?"
+
+Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+ voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+  cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id 
+  est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam 
+  libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+   maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus 
+   autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates
+    repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+     ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
+     repellat." 1914 translation by H. Rackham "On the other hand, we denounce with righteous
+      indignation and dislike men who are so beguiled and demoralized by the charms of pleasure
+       of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are 
+       bound to ensue; and equal blame belongs to those who fail in their duty through weakness of
+        will, which is the same as saying through shrinking from toil and pain. These cases are perfectly 
+    
+          </v-card-text>
+        <v-card-actions>
+          
+          <v-btn right color="red" @click="onSubmit">I ACCEPT</v-btn>
+          <v-btn right color="red" @click="dialog = false">quit</v-btn>
+        </v-card-actions>
+      
+             </v-card>
+    </v-dialog>
   <v-col cols="12" sm="4" md="4" >
      <v-card class="justify-center " flat >
  
@@ -367,7 +408,7 @@
               </v-card-title>
               
               <v-card-subtitle>
-                  <p class="category  font-italic" >
+                  <p class="category " >
                      MR(s) {{this.customer.first_name}}   {{this.customer.last_name}}
                   </p>
               </v-card-subtitle>
@@ -436,13 +477,13 @@ data(){
         object:{ 
    
     creation_date:'',
-    customer: {},
-    info: {},
+    customer: '',
+    info: '',
     sub_service:'' ,
     
     },
  
-
+dialog: false,
       
         menu2: false,
         modal2: false,
@@ -459,25 +500,25 @@ data(){
      maxDate: "2019-08-30",
       
       ckeckRules:[
-        v => !!v || 'You must  accept to continue!'
+        v => !!v || this.$t('You must  accept to continue!')
       ],
       emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+        v => !!v || this.$t('rule'),
+        v => /.+@.+\..+/.test(v) || this.$t('email')
         ],
       
       nameRules: [
-        v => !!v || 'this field  is required',
-        v => v.length <=15 || 'must be less than 15 characters'
+        v => !!v || this.$t('rule'),
+        //v => v.length <=15 || 'must be less than 15 characters'
       ],
 
         phoneRules: [
         //v => v.length = 9 || "the phone number contains 9 characters",
-        //v => v.length > 0 ||  'this field may not be empty',
+       // v => v.length <  || this.$t('nber') ,
         //v => Number.isInteger(Number(v)) || "the value must be an integer number",
-           v => !!v || 'this field  is required',
+           v => !!v || this.$t('rule'),
            //v => /[^0-8]/.test(v) || 'must contains  9 numbers',
-          V => V.length > 8 || 'less than 9 characters is not accepted ' 
+         
         
         
         
@@ -509,39 +550,23 @@ methods:{
    //var x = this.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,3})/);
     //this.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
     //},
+    start(){
+ this.dialog = true
+
+    },
     onSubmit(){
-    
-   
-          localStorage.setItem('sub_service', JSON.stringify(this.select));
+      localStorage.setItem('sub_service', JSON.stringify(this.select));
           localStorage.setItem('clients', JSON.stringify(this.customer));
           localStorage.setItem('order',JSON.stringify(this.order));
           this.$store.dispatch('preserveLocal');
-          //localStorage.setItem('myQuiz' , JSON.stringify(this.quiz))
-            //this.$store.dispatch('Localquiz');
-          // this.$store.dispatch('createQuiz')
-
-          //this.$store.dispatch('createOrderInfos')
-          //this.$store.dispatch('createCustomer')
-
-     // if(localStorage.getItem('jobRequest')!== null ){
-      //  this.dialog = true
-     // }
-
- 
-          //this.$store.dispatch('setSnacbar')
-         // this.dialog = true
-           
-          
-         
-         
-          
-   
+   //this.dialog = false
  //this.$router.push('/')
       },
       accepted(){
-       this.$router.replace('/')
-       window.localStorage.clear() 
-        window.location.reload(true)
+        this.modal.dialog = false
+      this.$router.replace('/')
+      window.localStorage.clear() 
+      window.location.reload(true)
       }
     
 },
@@ -575,7 +600,7 @@ methods:{
       // format/do something with date
     },
   ...mapGetters(['getServices']),
-  ...mapState(['jobRequest','snackbar', 'modal', 'customer']),
+  ...mapState(['jobRequest','snackbar', 'modal']),
   
         services(){
       return this.getServices(this.id)
@@ -613,10 +638,18 @@ methods:{
 }
 
 
-.required::after{
+.labeler::after{
 content: "*";
-width: 40px;
+width: 50px;
 position: static;
+color: red;
+}
+
+.labele::before{
+content: "*";
+width: 60px;
+margin-left: 4px;
+position:static;
 color: red;
 }
 h3{

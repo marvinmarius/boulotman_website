@@ -76,7 +76,7 @@ computed: {
   text-align: center;
   text-justify: auto;
   
-    
+   
     font-weight: 600;
     font-size: 40px
 }

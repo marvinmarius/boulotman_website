@@ -69,7 +69,11 @@
             </router-link>
           </p>
           <p class="v-list-item--link">
-            <v-icon size="24px" left>mdi-shield-lock-outline</v-icon>{{$t('Privacy Policy')}}</p>
+            <v-icon size="24px" left>mdi-shield-lock-outline</v-icon>
+            <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/privacy-policy`" >
+            {{$t('Privacy Policy')}}</router-link>
+            </p>
+            
            <p class="v-list-item--link">
              <v-icon size="24px" left>mdi-electron-framework</v-icon>
              <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/services`" >
@@ -77,7 +81,10 @@
              </router-link>
              </p>
            <p class="v-list-item--link">
-             <v-icon size="24px" left>mdi-book-open</v-icon>{{$t('Terms & Conditions')}}
+             <v-icon size="24px" left>mdi-book-open</v-icon>
+             <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/terms-and-conditions`" >
+            {{$t('Terms & Conditions')}}
+             </router-link>
             </p>
            
            
@@ -99,8 +106,8 @@
        <v-card-text class="justify-center"><h2 class="text-decoration-underline">{{ $t('Our Contacts')}}</h2></v-card-text>
      <v-list-item-group class="justify-center grp">
           <p class="v-list-item--link font-smaller"><v-icon size="24px" left>mdi-email</v-icon>boulotman@gmail.com</p>
-         <p class="v-list-item--link font-smaller"><v-icon size="24px" left>mdi-phone</v-icon>(+237)000-000-000</p>
-          <p class="v-list-item--link "><v-icon size="24px" left>mdi-phone-classic</v-icon>fix: 222-222-222</p>
+         <p class="v-list-item--link font-smaller"><v-icon size="24px" left>mdi-phone</v-icon>(+237)698884618</p>
+          <p class="v-list-item--link "><v-icon size="24px" left>mdi-phone-classic</v-icon>fix: +237 233-478-795</p>
      </v-list-item-group>
           </v-card>
          

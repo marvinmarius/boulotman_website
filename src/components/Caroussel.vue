@@ -30,22 +30,16 @@
           
         >
     
-                     <div class="text-center justify-center mb-n9">
-                      
-   <h1 class="ligne "> {{ item.title }}</h1>
-        </div>
+                      <div class="text-center justify-center mb-n9"> 
+                        <h1 class="ligne "> {{ item.title }}</h1>
+                      </div>
         
-               <div class="text-center justify-center">
- <h1 class="ligne2"> <div><v-btn  class="red" rounded :to="`/${$i18n.locale}/contact`">{{$t('Contact  US')}}</v-btn></div></h1>
-        </div> 
+                      <div class="text-center justify-center">
+                        <h1 class="ligne2"> <div><v-btn  class="red" rounded :to="`/${$i18n.locale}/contact`">{{$t('Contact  US')}}</v-btn></div></h1>
+                      </div> 
       
         </v-col>
-</v-row>
-
-   
-
-    
-         
+</v-row> 
     </v-carousel-item>
 
       </v-carousel>
@@ -81,6 +75,15 @@ return [
             src: require('../assets/construction 5.jpg'),
             title: this.$t('items.titles')
           },
+           {
+            src: require('../assets/1nordalta-stats-background-1024x576.jpg'),
+            title: this.$t('items.titles')
+          },
+           {
+            src: require('../assets/1mechanic.jpg'),
+            title: this.$t('items.titles')
+          },
+          
            {
             src: require('../assets/construction 4.jpg'),
             title: this.$t('items.titlea')

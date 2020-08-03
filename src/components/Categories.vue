@@ -1,7 +1,8 @@
 <template>
 <v-layout>
   <v-container>
-  
+  <v-skeleton-loader v-if="loading == true" :loading="loading" transition="fade-transition" type="card">
+</v-skeleton-loader>
       <v-row>
         <v-col cols="12">
           <div class="flex justify-center"
@@ -19,9 +20,17 @@
     <v-col  cols="4" 
     v-for="categorie in categories"
     :key="categorie.id">
-      <v-card outlined shaped class="mx-auto">
+    <v-lazy :options="{ threshold: 0.5 }" min-height="130">
+           <v-hover v-slot:default="{ }">
+      <v-card outlined shaped class="mx-auto" hover>
   
+  <template v-slot:placeholder>
+    <v-sheet>
+      <v-skeleton-loader />
+    </v-sheet>
+  </template>
     <v-img
+    
       class="align-center"
       :src="categorie.image"
       height="190px"
@@ -40,6 +49,8 @@
                 </div>
               </v-card-actions>
           </v-card>
+          </v-hover>
+           </v-lazy>
             </v-col>
           
           </v-row>
@@ -48,7 +59,10 @@
     </v-layout>
  
   
- 
+  <v-overlay  :opacity="0" translate
+      :value="overlay">
+      <v-progress-circular slot-scope="" size="64" >loading...</v-progress-circular>
+    </v-overlay>
 </v-container>
 </v-layout>
 
@@ -60,7 +74,14 @@
   export default {
     name:'Categories',
  
-
+data: () => ({
+    loading: true,
+    loaded: true,
+    overlay: true,
+}),
+mounted(){
+      this.overlay = true
+    },
 computed: {
   categories(){
     return this.$store.state.categories

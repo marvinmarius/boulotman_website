@@ -8,6 +8,8 @@ import StepByStep2 from '../views/StepByStep2.vue'
 import Modal from '../views/Modal.vue'
 import FinalForm from '../views/FinalForm.vue'
 import Customers from '../views/Customers.vue'
+import TermsConditions from '../views/TermsConditions.vue'
+import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import i18n from '../i18n'
 
 
@@ -149,6 +151,18 @@ Vue.use(VueRouter)
         path: 'customers',
         name: 'customers',
         component: Customers,
+        
+       
+      },
+      {
+        path: 'terms-and-conditions',
+        name: 'terms-and-conditions',
+        component: TermsConditions,
+      },
+      {
+        path: 'privacy-policy',
+        name: 'privacy-policy',
+        component: PrivacyPolicy,
         
        
       },

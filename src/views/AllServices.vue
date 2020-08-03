@@ -9,7 +9,7 @@
           <div class="justify-center"
           >
          
-         <h1 class="categoriess"> ALL THE AVAILLABLE SERVICES</h1>
+         <h1 class="categoriess">  {{$t('Available Services')}}</h1>
           </div>
         </v-col>
     </v-flex>

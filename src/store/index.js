@@ -42,10 +42,10 @@ export default new Vuex.Store({
   object:{ 
     
    
-    customer: {},
-    info: {},
-    sub_service:{} ,
-    service: {},
+    customer: '',
+    info: '',
+    sub_service:'' ,
+    service: '',
     
     },
     arrayOfQuiz:[],
@@ -149,29 +149,9 @@ export default new Vuex.Store({
    },
  
   
-         SET_JOB_DATA(state){
+         SET_JOB_DATA(state, job){
 
-          try{
-            let service = JSON.parse(localStorage.getItem('service'));
-             let sub_service = JSON.parse(localStorage.getItem('sub_service'));
-             //let quizzes = JSON.parse(localStorage.getItem('quizzes'));
-             let info = JSON.parse(localStorage.getItem('info'));
-             let customer = JSON.parse(localStorage.getItem('customer'));
-            
-            
-              state.object.info = info
-             state.object.customer = customer
-             state.object.sub_service = sub_service
-             state.object.service = service
-             //state.object.quizzes = quizzes
-             
-             localStorage.setItem('Job',  JSON.stringify(state.object))
-             let Job = JSON.parse(localStorage.getItem('Job'));
-          state.Job = Job 
-        }catch(e){
-          console.error(e);
-          
-        }
+         state.job = job
       },
 
    ADD_NEW_ORDER(state, info){
@@ -252,11 +232,7 @@ export default new Vuex.Store({
     dispatch('createCustomer')
 },
 
-  loadJobArray(context)  {
-   
-      context.commit('SET_JOB_DATA');
-
-    },
+ 
 
     async loadCategories({commit}){
       let response = await Api.get('/categories');
@@ -322,7 +298,7 @@ export default new Vuex.Store({
     localStorage.setItem('info', JSON.stringify(info.id))
     commit('ADD_NEW_ORDER', info)
    dispatch ('loadJobArray')
-    dispatch('createJobRequest')
+    
   
   }catch(e){
     console.error(e);
@@ -331,32 +307,59 @@ export default new Vuex.Store({
 },
 
   async createCustomer({commit, dispatch}){
-    
-
-     
-     let allcustomers = this.state.allcustomers
-     let xy = this.state.clients
-
-      for (var i = 0 ; i<allcustomers.length; i++){
-        
-       if(allcustomers[i].email == xy.email) {
-        let  customer = allcustomers[i]
-         localStorage.setItem('customer',JSON.stringify(customer.id))
-         commit('ADD_NEW_CUSTOMER', customer)
-         dispatch('createOrderInfos')
-        }else{
-        let response = await Api.post('/customers/new/', xy)
-        let customer = response.data
-        localStorage.setItem('customer', JSON.stringify(customer.id))
+   
+    // let allcustomers = this.state.allcustomers
+     //let xy = this.state.clients
+     let allcustomers = JSON.parse(localStorage.getItem('allcustomers'))
+     let xy =  JSON.parse(localStorage.getItem('clients'))
+     let datas = await Promise.all(allcustomers.map(async item => {
+        if((item.email == xy.email) || (item.phone_number == xy.phone_number)) {
+        let customer =  item
+        localStorage.setItem('customer',JSON.stringify(item.id))
+        localStorage.setItem('datas',JSON.stringify(datas))
         commit('ADD_NEW_CUSTOMER', customer)
         dispatch('createOrderInfos')
-        
-      }
-    }
+      }else{
+      let response = await Api.post('/customers/new/', xy)
+      let customer = response.data
+      localStorage.setItem('customer', JSON.stringify(customer.id))
+      commit('ADD_NEW_CUSTOMER', customer)
+      dispatch('createOrderInfos')
+     }
+  }))
+    
+    
+  },
  
     
-},
 
+    async loadJobArray({commit,dispatch})  {
+      try{
+        let service = JSON.parse(localStorage.getItem('service'));
+         let sub_service = JSON.parse(localStorage.getItem('sub_service'));
+         //let quizzes = JSON.parse(localStorage.getItem('quizzes'));
+         let info = JSON.parse(localStorage.getItem('info'));
+         let customer = JSON.parse(localStorage.getItem('customer'));
+        
+        
+        this.state.object.info = info
+        this.state.object.customer = customer
+        this.state.object.sub_service = sub_service
+        this.state.object.service = service
+         //state.object.quizzes = quizzes
+         
+         localStorage.setItem('Job',  JSON.stringify(this.state.object))
+         let Job = JSON.parse(localStorage.getItem('Job'));
+
+      commit('SET_JOB_DATA',Job);
+      dispatch('createJobRequest')
+    }catch(e){
+      console.error(e);
+      
+    }
+
+  
+      },
  
   async createJobRequest({commit,dispatch}){
   try{
