@@ -5,7 +5,7 @@ module.exports = {
   ],
 
   devServer: {
-   proxy: 'http://192.168.102.114:8000',
+   proxy: 'http://192.168.100.214:8000',
    //proxy: 'http://84b50d9d8258.ngrok.io'
 
   },
