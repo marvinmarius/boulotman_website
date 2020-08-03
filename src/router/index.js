@@ -75,8 +75,8 @@ Vue.use(VueRouter)
       {
         path: 'rrr',
         name: 'rrr',
-        component: Requirement,
-        params:true,
+        component: Modal,
+        
        
       },
   

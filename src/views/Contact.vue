@@ -6,7 +6,7 @@
       <v-progress-circular indeterminate size="64">loading...</v-progress-circular>
     </v-overlay>
    
-      <div  class="flex  fill-height mt-n8" >
+      <div  class="flex  fill-height mt-n8  ml-n2" >
       <v-img  src="../assets/anytime-header.jpg"  >
     </v-img>
       </div>
@@ -80,7 +80,7 @@
           window.open("https://mail.google.com/mail/?view=cm&fs=1&to=boulotman237@gmail.com")
         },
         sendMessage(){
-          window.open("https://api.whatsapp.com/send?phone=' +237 650528787 + '&text=%20 + I need more information")
+          window.open("https://api.whatsapp.com/send?phone=' +237 691582718 + '&text=%20 + I need more information")
         }
     },
    

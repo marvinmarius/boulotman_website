@@ -95,16 +95,30 @@
       "title": "Veuillez remplir le formulaire ci-dessous afin de fournir vos exigences pour:"
     },
 
-    "WHO WE ARE?":"QUI SOMMES NOUS?",
-    "OUR TEAM": "NOTRE EQUIPE",
+    "Who We Are?":"Qui Sommes Nous?",
+    "Our Team": "Notre Equipe",
+    "boulotman": "est une société de réservation virtuelle pour les techniciens et ingénieurs du Cameroun et d'autres pays de la CEMAC pour servir sans déplacer les résidents. Notre société offre aux résidents des communautés centrafricaines des services complets de bricoleur. En tant qu'entreprise de bricoleur, Boulotman couvrira un large éventail de services de réparation de maisons et de projets de construction de bâtiments. Boulotman offre des services de réparation pour; Mécanique automobile, maçonnerie, plomberie, électricité, menuiserie, verrerie, réfrigération, déménagement, pressage, services de nettoyage, nounou, rénovation, rénovation, technologie de l'information, réparation de télévision, livraison et bien d'autres. ",
     "COMMING SOON !!!":"Bientôt Disponible!!!",
+    "Our Technicians":"Nos Techniciens",
+    "Our mission":"Notre mission",
+    "why":"Pourquoi Boulot Man?",
+    "touch":"Prenez contact avec Boulotman",
+
+    "statement":"Boulotman n'est pas responsable de tout technicien qui se présente à tort comme un employé ou un entrepreneur de la société Boulotman, de prendre des contrats individuellement sans l'autorisation d'un superviseur de Boulotman sur le terrain avec une identité vérifiée par Boulotman. Dans ce cas, appelez toujours la société pour vérifier que le technicien est de Boulotman. Tous nos techniciens sont marqués d'un badge d'identité portant leur nom complet et leurs fonctions. Si un client n'est pas satisfait d'un service et appelle Boulotman pour la garantie et que nous ne sommes pas en mesure de vérifier cette mission, nous ne serons  pas  responsable des dommages et avons le droit de refuser sauf indication contraire, le client souhaite conclure un nouveau contrat. ",
+    "Our prices are very affordable.":"Nos prix sont très abordables",
+    "texte":"Le contrôle de la qualité est notre priorité. Le matériel Boulotman ou les pièces utilisées pour le remplacement sont scellés et vérifiés par nos partenaires d'approvisionnement. La ponctualité est l'un de nos principaux avantages concurrentiels. Boulotman se targue d'être ponctuel et respecte la date pour faire votre travail En offrant de l'efficacité, nous tenterons de réparer le problème en premier, le remplacement n'est une option que si l'article ne peut pas être réparé. La réparation des articles est beaucoup moins chère pour le consommateur. Boulotman offre une garantie de 6 mois pour tous leurs travaux, en cas de problème. , Boulotman y parviendra. Le but est de ne pas avoir de consommateur insatisfait. ",
+    "whywhy":"Boulot man est une entreprise de techniciens qui couvrira tous vos projets de réparation, d'entretien et de construction de bâtiments. Avec sa plateforme, vous êtes bien assuré que vos travaux seront réalisés de manière professionnelle avec une garantie de travaux.",
+    "mission": "La mission de BOULOTMAN est de fournir des services de bricoleur compétents, pratiques et à des prix raisonnables à la communauté centrafricaine. Boulotman fournira à chaque client une journée de travail honnête et réparera tout ce qui n'est pas fait correctement.",
+    "tech":"Nos techniciens sont des artisans hautement qualifiés avec une solide formation dans le métier et l'étiquette. Nos bricoleurs minutieux sont connus pour la qualité de l'exécution et la fiabilité professionnelle afin que vous sachiez que le travail sera effectué correctement et efficacement.",
     "items": 
 
     {
-      "titlet": "Reserver un Technicien aujourd'hui",
+      "titlet": "nous sommes une entreprise de techniciens qui couvrira tous vos projets de réparation, d'entretien et de construction de bâtiments",
       "title": "Utilisez le lien ci-dessous pour nous contacter",
-      "titles": "Satisfaction guarantie",
-      "titlea": "n'importe quand n'importe où, nous sommes là pour vous servir"
+      "titles": "réservez un technicien  pour une satisfaction garantie",
+      "titlea": "n'importe quand n'importe où, nous sommes là pour vous servir",
+      "home1": "réparez et rendez votre maison neuve"
+
 
     }
     

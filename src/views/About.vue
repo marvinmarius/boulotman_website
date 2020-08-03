@@ -1,34 +1,43 @@
 <template>
-<v-container fluid>
-  <div class="row mt-n9" >
-<v-img class="flex fill-height" src="../assets/111aboutus.jpg"
- max-height="600px">
-          <v-row align="end" class="lightbox white--text pa-2 fill-height">
-            <v-col>
-                
-                <div class="text-center white--text ">
-                  <v-btn  class="red mb-0 pb-n5" rounded :to="`/${$i18n.locale}/contact`">{{$t('Contact  US')}}</v-btn>
-                </div>       
-            </v-col>
-          </v-row>
-    </v-img>
-  </div>
 
+<v-container fluid>
+    <div  class="flex  fill-height mt-n9 mr-n2 ml-n2 hidden-sm-and-down" >
+      <v-img   src="../assets/111aboutus.jpg" >
+    </v-img>
+
+      </div>
+  
+  
+  
    <v-container >
      
      <v-col cols="12" class="mt-8"> 
         <h4 class="team"><p>{{$t('Who We Are?')}}</p></h4>
      </v-col>
-     
+     <v-col cols="12" sm="4" md="4" class="hidden-md-and-up"> 
+      <v-carousel hide-delimiters cycle   dark
+     height="300"
+     interval="3000"
+   
+     >
+
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+      class="flex fill-height"
+    >
+    </v-carousel-item>
+
+      </v-carousel>
+</v-col>
    <div>
    <v-row class="justify-space-between ">
        <v-divider ></v-divider>
    <v-col cols="12" sm="8" md="8"> 
              
             <p > 
-            <strong >Boulotman</strong> is a virtual booking company for Technicians and Engineers around Cameroon and Other CEMAC Countries to serve without dislocating residents.
-Our company offers residents of Central African Communities complete handyman services. As a handyman company, Boulotman will cover a wide range of home repair services and building construction projects.
-Boulotman offers fix-it services for; Auto Mechanics, Masonry, Plumbing, Electrical, Carpentry, Glassworks, Refrigeration, Property Mover, Pressing, Cleaning services, Nanny, Renovation, remodeling, Information technology, TV repair, Delivery and many more.
+            <strong >Boulotman</strong> {{$t('boulotman')}}
     </p>
    </v-col>
 <v-col cols="12" sm="4" md="4" class="hidden-sm-and-down"> 
@@ -37,32 +46,38 @@ Boulotman offers fix-it services for; Auto Mechanics, Masonry, Plumbing, Electri
           alt="about"
          height="200"
           src="../assets/about.jpg" 
+          lazy-src="../assets/about.jpg"
           />
 </v-col>
    </v-row>
   <v-row class="justify-space-between mt-4">
    <v-col cols="12" sm="8" md="8"> 
-<h4><p>Our Technicians</p></h4>
-Our technicians are highly skilled craftsmen with a strong educational background in the trade and etiquette.
- Our fastidious handymen are known for the quality of workmanship and professional reliability so you know 
- the job will be done correctly and efficiently.
+<h4><p>{{$t('Our Technicians')}}</p></h4>
+{{$t('tech')}}
    </v-col>
    <v-col cols="12" sm="4" md="4" class="hidden-sm-and-down"> 
-     <v-img
+      <v-carousel hide-delimiters cycle   dark
+     height="300"
+     interval="3000"
    
-          alt="technicians"
-         height="200"
-          src="../assets/technician.jpg" 
-          />
+     >
+
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+      class="flex fill-height"
+    >
+    </v-carousel-item>
+
+      </v-carousel>
 </v-col>
   </v-row>
 
    <v-row class="justify-space-between mt-4">
    <v-col cols="12" sm="8" md="8"> 
- <h4><p >Our mission</p></h4>
-BOULOTMAN'S mission is to provide knowledgeable, convenient, and reasonably-priced handyman 
-services to the Central African community. Boulotman will provide every customer with an honest
- day's work and will fix anything that is not done right.
+ <h4><p >{{$t('Our mission')}}</p></h4>
+{{$t('mission')}}
    </v-col>
    <v-col cols="12" sm="4" md="4" class="hidden-sm-and-down"> 
      <v-img
@@ -70,34 +85,29 @@ services to the Central African community. Boulotman will provide every customer
           alt="technicians"
          height="200"
           src="../assets/mission.jpg" 
+            lazy-src="../assets/mission.jpg"
           />
 </v-col>
    </v-row>
     <v-row class="justify-space-between mt-4">
    <v-col cols="12" sm="8" md="8"> 
-<h4><p>Why Boulot Man?</p></h4>
-Boulot man is a company for technicians that will cover all your home repair, 
-  maintenance, and building construction project. With its platform, you are well 
-  assured that your work will be handled professionally with a work guarantee.
+<h4><p>{{$t('why')}}</p></h4>
+{{$t('whywhy')}}
 
-<span class="red--text">Our prices are very affordable.</span>
-Quality control is our point of focus. Boulotman material or parts used for replacement are sealed verified from our supply partners.
-
-On-time is one of our key competitive edges. Boulotman prides itself on being punctual and respects the date to get your job done.
-
-By providing efficiency, we will attempt to repair the problem first, replacement is only an option if the item cannot be repaired.
-
-Repairing items is far less expensive for the consumer. Boulotman offers 6 months guarantee for all their work, if something goes wrong, Boulotman will make it right. The goal is to not have any unsatisfied consumer.
+<span class="red--text">{{$t('Our prices are very affordable.')}}</span>
+{{$t('texte')}}
           
 
    </v-col>
 
 <v-col cols="12" sm="4" md="4" class="hidden-sm-and-down"> 
      <v-img
+     
    
           alt="why boulotman"
          height="200"
           src="../assets/why.jpeg" 
+          lazy-src="../assets/why.jpeg"
           />
 </v-col>
     </v-row>
@@ -165,6 +175,38 @@ Repairing items is far less expensive for the consumer. Boulotman offers 6 month
 <script>
   export default {
     name:'about',
+     computed:{
+items(){
+
+return [
+
+          {
+            src: require('../assets/construction 3.jpg'),
+            
+          },
+          {
+            src: require('../assets/technician.jpg'),
+            
+          },
+         
+           {
+            src: require('../assets/11construction-worker-belt-with-tools-concrete-texture-background-free-space-text_35378-2163.jpg'),
+           
+          },
+           {
+            src: require('../assets/techn2.jpg'),
+          
+          },
+         
+          
+           {
+            src: require('../assets/construction 4.jpg'),
+           
+          },
+        
+        ]
+}
+      },
     data(){
       return {
         categories:[

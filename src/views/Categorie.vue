@@ -20,6 +20,14 @@
     <v-col  cols="12" sm="4" md="4" 
     v-for="categorie in categories"
     :key="categorie.id">
+
+  
+   <v-skeleton-loader
+          :loading="loading"
+          :transition="transition"
+          height="150"
+          type="card,list-item-two-line"
+        >
       <v-card   outlined shaped class="ma-3">
   
     <v-img
@@ -40,6 +48,8 @@
                 </div>
               </v-card-actions>
           </v-card>
+           </v-skeleton-loader>
+   
             </v-col>
           
           </v-row>
@@ -59,6 +69,16 @@
 import {mapState} from 'vuex'
 
   export default {
+     data: () => ({
+   
+    loading:true,
+     transition: 'scale-transition',
+    }),
+    inject: ['theme'],
+     mounted(){
+   
+      this.loading = false
+   },
     name:'Categories',
 
 computed: {

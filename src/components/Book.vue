@@ -20,7 +20,7 @@
                 <div class="text-center white--text">
                   
                    <v-btn rounded class="red" 
-                     :to="`/${$i18n.locale}/contact`" >{{$t('Contact US')}}
+                   @click.native="scrollToTop"  :to="`/${$i18n.locale}/contact`" >{{$t('Contact US')}}
                    </v-btn>
                    
             
@@ -46,6 +46,11 @@
 
 <script>
 export default {
+   methods:{
+     scrollToTop() {
+                window.scrollTo(0,0);
+           }
+  },
     name:'Book',
 }
 

@@ -5,7 +5,7 @@
        
    
 <div class="align-center ml-10 flex">
-  <v-col cols="12">
+  <v-col cols="12" md="7">
   <v-alert
       text
       prominent
@@ -25,7 +25,7 @@
 </div>
 <v-divider></v-divider>
 
-    <div class=" ml-10 mb-2">
+    <div class=" ml-10 mb-n6">
     <v-col cols="12" sm="6" md="5"  
    
     >

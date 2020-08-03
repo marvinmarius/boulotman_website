@@ -4,6 +4,8 @@
       :value="overlay">
       <v-progress-circular indeterminate size="64">loading...</v-progress-circular>
     </v-overlay>
+  
+            
  <v-flex>
         <v-col cols="12">
           <div class="justify-center"
@@ -23,6 +25,13 @@
     v-for="allservice in allservices"
     :key="allservice.id"
     >
+  
+   <v-skeleton-loader
+          :loading="loading"
+          :transition="transition"
+          height="190"
+          type="card,list-item-two-line"
+        >
       <v-card outlined shaped class="ma-3">
   
   
@@ -48,6 +57,8 @@
                 </div>
               </v-card-actions>
           </v-card>
+   </v-skeleton-loader>
+
             </v-col>
           </v-row>
    
@@ -60,10 +71,13 @@ import {mapGetters} from 'vuex'
   export default {
     mounted(){
       this.overlay = false
+      this.loading = false
    },
 
      data: () => ({
     overlay: true,
+    loading:true,
+     transition: 'scale-transition',
     }),
        inject: ['theme'],
     name:'AllServices',
@@ -73,6 +87,9 @@ computed:{
             return this.$store.state.allservices  
         },
         ...mapGetters(['getRelatedServices']),
+       
+    
+  
       
 }
   }

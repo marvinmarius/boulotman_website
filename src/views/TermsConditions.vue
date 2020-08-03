@@ -1,11 +1,18 @@
-<template>
-    <v-container>
+<template >
+<v-parallax
+height="100%"
+class="mt-n6"
+    dark
+    src="../assets/bg black.jpg"
+  >
+    <v-container >
+    
         <v-row >
         <v-col cols="12">
-          <div class="flex justify-center "
+          <div class="flex justify-center mt-8"
           >
          
-         <h1 class="categoriesss">  {{$t('terms')}}</h1>
+         <h1 class="categoriesss ">  {{$t('terms')}}</h1>
           </div>
         </v-col>
         </v-row>
@@ -52,46 +59,18 @@
         <li>{{$t('22')}}</li>
         <li>{{$t('23')}}</li>
         <li> {{$t('24')}}</li>
+        <li><span><h3 >{{$t('Statement of Work')}}</h3></span> {{$t('statement')}} </li>
    
         </ol>
-
+    </div>
+      
 
        
     </div>
 
-      </div>
-
-       <v-row >
-        <v-col cols="12">
-          <div class="flex justify-center "
-          >
-         
-         <h1 class="categoriess">{{$t('Statement of Work')}}</h1>
-          </div>
-        </v-col>
-        <v-alert
-      text
-      prominent
-     class="ma-8"
-      border="bottom"
-      
-    
      
-    >
-     <h4>
-            <p>Boulotman is not responsible for any technician who misrepresents him or
-               herself as an employee or contractor of Boulotman company to take contracts
-                individually without authorisation from a Boulot man supervisor in the field with 
-                a verified identity for Boulotman. In this case, always call the company to verify the
-                 technician is from Boulotman. All our technicians are branded with an identity badge 
-                 carrying their full name and functions.
-If a customer is not satisfied with a service and calls Boulotman for the guarantee and we are unable 
-to verify that mission, we will not be held responsible for the damages and have the right to decline 
-unless otherwise, the customer wants to get into a new contract.</p>
-   </h4>
-  </v-alert>
-        </v-row>
     </v-container>
+</v-parallax>
 </template>
 <style scoped>
 ol li{
@@ -102,7 +81,7 @@ ol li{
   text-align: center;
   text-justify: auto;
   
-    color: brown;
+ 
     font-weight: 600;
     font-size: 40px
 }
@@ -110,7 +89,7 @@ ol li{
   text-align: center;
   text-justify: auto;
   
-    color: brown;
+
    
 }
 </style>

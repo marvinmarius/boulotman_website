@@ -6,10 +6,7 @@
 <Categories></Categories>
   <v-divider></v-divider>
  <Book ></Book>
-   <v-overlay  :opacity="0" translate
-      :value="overlay">
-      <v-progress-circular slot-scope="" size="64" >loading...</v-progress-circular>
-    </v-overlay>
+  
   </div>
 </template>
 
@@ -27,7 +24,7 @@ export default {
     overlay: true,
 }),
 mounted(){
-      this.overlay = false
+      
     },
 
   computed:{

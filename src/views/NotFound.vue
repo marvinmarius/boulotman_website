@@ -1,7 +1,13 @@
 <template>
-<Yo></Yo>
-   
 
+   <v-parallax
+height="100%"
+class="mt-n6"
+    dark
+    src="../assets/1nordalta-stats-background-1024x576.jpg"
+  >
+<Yo></Yo>
+   </v-parallax>
 </template>
 
 <script>

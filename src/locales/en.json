@@ -91,11 +91,21 @@
   "neighbourhood": "neighbourhood",
   "thank you for trusting us. ": "Thank you for trusting us. ",
   "e.g: bonandjo, located 50m from BEAC": "e.g: bonandjo, located 50m from BEAC",
-    
+  "boulotman":"is a virtual booking company for Technicians and Engineers around Cameroon and Other CEMAC Countries to serve without dislocating residents. Our company offers residents of Central African Communities complete handyman services. As a handyman company, Boulotman will cover a wide range of home repair services and building construction projects. Boulotman offers fix-it services for; Auto Mechanics, Masonry, Plumbing, Electrical, Carpentry, Glassworks, Refrigeration, Property Mover, Pressing, Cleaning services, Nanny, Renovation, remodeling, Information technology, TV repair, Delivery and many more.",  
   "Customers": "Customers",
-"WHO WE ARE?":"WHO WE ARE?",
-"OUR TEAM":  "OUR TEAM",
+  "Our Technicians":"Our Technicians",
+  "Our mission":"Our mission",
+  "mission": "BOULOTMAN'S mission is to provide knowledgeable, convenient, and reasonably-priced handyman services to the Central African community. Boulotman will provide every customer with an honest day's work and will fix anything that is not done right.",
+  "tech":"Our technicians are highly skilled craftsmen with a strong educational background in the trade and etiquette. Our fastidious handymen are known for the quality of workmanship and professional reliability so you know the job will be done correctly and efficiently.",
+"Who We Are?":"Who We Are?",
+"texte":"Quality control is our point of focus. Boulotman material or parts used for replacement are sealed verified from our supply partners. On-time is one of our key competitive edges. Boulotman prides itself on being punctual and respects the date to get your job done. By providing efficiency, we will attempt to repair the problem first, replacement is only an option if the item cannot be repaired.Repairing items is far less expensive for the consumer. Boulotman offers 6 months guarantee for all their work, if something goes wrong, Boulotman will make it right. The goal is to not have any unsatisfied consumer.", 
+"Our Team":  "Our Team",
+"Our prices are very affordable.":"Our prices are very affordable.",
+"why":"Why Boulot Man?",
+"statement":"Boulotman is not responsible for any technician who misrepresents him or herself as an employee or contractor of Boulotman company, to take contracts individually without authorisation from a Boulotman supervisor in the field with a verified identity for Boulotman. In this case, always call the company to verify the technician is from Boulotman. All our technicians are branded with an identity badge carrying their full name and functions. If a customer is not satisfied with a service and calls Boulotman for the guarantee and we are unable to verify that mission, we will not be held responsible for the damages and have the right to decline unless otherwise, the customer wants to get into a new contract.",
+"whywhy":"Boulot man is a company for technicians that will cover all your home repair, maintenance, and building construction project. With its platform, you are well assured that your work will be handled professionally with a work guarantee.",
 "COMMING SOON !!!":"COMMING SOON !!!",
+"touch":"Get in Touch with Boulotman",
 
   "form":{
     "title": "Please Fill the form below in order to provide your requirements for:"
@@ -103,10 +113,11 @@
   "items": 
 
     {
-      "titlet": "Book a Technician today",
+      "titlet": "we are a company of technicians that will cover all your building repair, maintenance and construction projects",
       "title": "Use the link bellow to Contact us",
-      "titles": "Satisfaction guaranteed",
-      "titlea": "Anytime, Anywhere , we are available to serve you"
+      "titles": "book a technician  for guaranteed satisfaction",
+      "titlea": "Anytime, Anywhere , we are available to serve you",
+      "home1": "repair and make your home brand new"
 
     }
 

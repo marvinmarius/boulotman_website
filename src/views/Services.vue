@@ -19,6 +19,13 @@
     v-for="service in category.services"
     :key="service.id"  >
 
+  
+   <v-skeleton-loader
+          :loading="loading"
+          :transition="transition"
+          height="150"
+          type="card,list-item-two-line"
+        >
       <v-card outlined shaped class="ma-3" >
 
     <v-img
@@ -41,6 +48,8 @@
                 </div>
               </v-card-actions>
           </v-card>
+   </v-skeleton-loader>
+ 
             </v-col>
           </v-row>
     </v-flex>
@@ -53,10 +62,18 @@
 import { mapGetters} from 'vuex'
   export default {
     name:'Services',
+
+   
+    inject: ['theme'],
+     mounted(){
+   
+      this.loading = false
+   },
   
     data(){
       return {
-        
+        loading:true,
+     transition: 'scale-transition',
         id: this.$route.params.id,
       
 
