@@ -11,14 +11,15 @@
   
    <v-container >
      
-     <v-col cols="12" class="mt-8"> 
+     <v-col cols="12" class="mt-4"> 
         <h4 class="team"><p>{{$t('Who We Are?')}}</p></h4>
      </v-col>
-     <v-col cols="12" sm="4" md="4" class="hidden-md-and-up"> 
-      <v-carousel hide-delimiters cycle   dark
+     <v-col cols="12"  class="hidden-md-and-up"> 
+      <v-carousel 
+      hide-delimiters cycle   dark
      height="300"
      interval="3000"
-   
+      
      >
 
     <v-carousel-item
@@ -118,51 +119,7 @@
 
       
 
-   <v-col cols="12" >
-        <h4 class="team">{{$t('Our Team')}}</h4>
-    
-   </v-col>
    
-
-    
-  <v-row  class="flex fill-height ">
-    <v-col cols="12" sm="4" md="4"
-    v-for="category in categories"
-    :key="category.id">
-      <v-hover>
-        <v-card flat 
-        slot-scope="{ hover }">
- 
-    <v-img 
-      class="white--text align-end rounded-circle "
-      :src="category.src"
-     
-    >
- 
-    </v-img>
-               <v-expand-transition>
-          <div
-            v-if="hover"
-            class="d-flex transition-fast-in-fast-out justify-center display-1 white--text fill-height"
-            style="height: 100%;"
-          >
-                       <v-card-actions >
-                 <v-btn class="yellow "><v-icon size="24px" class="dark-gray" left>mdi-email</v-icon>Send Mail</v-btn>
-              </v-card-actions>
-        
-          </div>
-        </v-expand-transition>
-              <v-card-text class="text--primary">
-                <p class="text-center bold text-uppercase">{{category.title}}</p>
-                  <p class="text-center bold">  {{category.description}}</p>
-              </v-card-text>
-
-          
-          </v-card>
-      </v-hover>
-            </v-col>
-          </v-row>
-    
 
    </v-container>
      
@@ -209,28 +166,7 @@ return [
       },
     data(){
       return {
-        categories:[
-          {
-            id:1,
-            title: "Marius Manela",
-            description: "Director",
-            src:require("../assets/icone team.png")
-          },
-          {
-               id:2,
-            title: "Boboy Armand",
-            description: "Vice Director",
-            src:require("../assets/icone team.png")
-          },
-          {
-               id:3,
-            title: "Mark Andre",
-            description: "Project Manager",
-            src:require("../assets/icone team.png")
-          },
-         
-          
-        ]
+       
       };
     }
     

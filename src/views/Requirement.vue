@@ -2,7 +2,20 @@
 
   <v-container fluid > 
  
+     <v-col cols="12"  class="hidden-md-and-up ml-10">
+     <v-card class="justify-center " dark>
+ 
+          <v-card-title class="categorie text-decoration-underline">
+      <p >{{$t('ser')}}</p>
+          </v-card-title>
        
+              
+          <v-card-text>
+      <p  class="justify-center category">{{services.description}}</p>
+          </v-card-text>
+     </v-card>
+  </v-col>
+<v-divider></v-divider>  
    
 <div class="align-center ml-10 flex">
   <v-col cols="12" md="7">
@@ -293,11 +306,11 @@
              :rules="ckeckRules" 
             >
               <template v-slot:label>
-                <div  >By clicking BOOK NOW, you agree to our
+                <div  >{{$t('click')}}
                   <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/terms-and-conditions`" >
                 {{$t('Terms & Conditions')}}
                  </router-link>
-                 and the <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/privacy-policy`" >
+                {{$t('and the')}} <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/privacy-policy`" >
                 {{$t('Privacy Policy')}}</router-link>
                 </div>
               </template>
@@ -329,61 +342,12 @@
         </v-card-actions>
       </v-card>
   </v-col>
-  <v-dialog v-model="dialog"  persistent max-width="900px">
-    
-             <v-card dark class="justify-center ">
+  
+  <v-col cols="12" sm="4" md="4" class="hidden-sm-and-down">
+     <v-card class="justify-center " >
  
-          <v-card-title>
-              
-           TERMS & USE
-     
-          </v-card-title>
-          <v-card-text>
-
-"But I must explain to you how all 
-this mistaken idea of denouncing pleasure and praising pain was born and I will 
-give you a complete account of the system, and expound the actual teachings of the great 
-explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, 
-or avoids pleasure itself, because it is pleasure, but because those who do not know how
- to pursue pleasure rationally encounter consequences that are extremely painful. Nor again
-  is there anyone who loves or pursues or desires to obtain pain of itself, because it is 
-  pain, but because occasionally circumstances occur in which toil and pain can procure him
-   some great pleasure. To take a trivial example, which of us ever undertakes laborious
-    physical exercise, except to obtain some advantage from it? But who has any right to 
-    find fault with a man who chooses to enjoy a pleasure that has no annoying consequences,
-     or one who avoids a pain that produces no resultant pleasure?"
-
-Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-
-"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
- voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-  cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id 
-  est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam 
-  libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
-   maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus 
-   autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates
-    repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
-     ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
-     repellat." 1914 translation by H. Rackham "On the other hand, we denounce with righteous
-      indignation and dislike men who are so beguiled and demoralized by the charms of pleasure
-       of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are 
-       bound to ensue; and equal blame belongs to those who fail in their duty through weakness of
-        will, which is the same as saying through shrinking from toil and pain. These cases are perfectly 
-    
-          </v-card-text>
-        <v-card-actions>
-          
-          <v-btn right color="red" @click="onSubmit">I ACCEPT</v-btn>
-          <v-btn right color="red" @click="dialog = false">quit</v-btn>
-        </v-card-actions>
-      
-             </v-card>
-    </v-dialog>
-  <v-col cols="12" sm="4" md="4" >
-     <v-card class="justify-center " flat >
- 
-          <v-card-title>
-      <p class="categorie text-decoration-underline">{{$t('ser')}}</p>
+          <v-card-title class="categorie text-decoration-underline">
+      <p >{{$t('ser')}}</p>
           </v-card-title>
        
               
@@ -409,16 +373,16 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
               
               <v-card-subtitle>
                   <p class="category " >
-                     MR(s) {{this.customer.first_name}}   {{this.customer.last_name}}
+                     Mr(s) {{this.customer.first_name}}   {{this.customer.last_name}}
                   </p>
               </v-card-subtitle>
                 
-              <v-card-text>
-                  <p class="justify-center" >{{ this.$t('successful')}}</p>
+              <v-card-text class="justify-center" >
+                  <p >{{ this.$t('successful')}}</p>
                   <br>  {{ this.$t('thank you for trusting us. ') }}  
               </v-card-text>
-              <v-card-actions >
-              <v-btn class="mr-10 justify-center" color="success" @click="accepted">OK</v-btn>
+              <v-card-actions class="ml-10 justify-center">
+              <v-btn  color="success" @click="accepted">OK</v-btn>
               </v-card-actions>
       
           </v-card>
@@ -489,8 +453,8 @@ dialog: false,
         modal2: false,
      
       items: [
-        'from 2AM to 7Pm',
-        'everytime',
+        'from 2Am to 7Pm',
+        this.$t('everytime'),
         'Before 3 AM',
         'After 4PM',
       ],
@@ -540,6 +504,9 @@ dialog: false,
     },
     
 methods:{
+   scrollToTop() {
+                window.scrollTo(0,0);
+           },
   
   read(){
       this.terms = false
@@ -563,10 +530,11 @@ methods:{
  //this.$router.push('/')
       },
       accepted(){
-        this.modal.dialog = false
-      this.$router.replace('/')
+       
+      this.$router.push('/')
       window.localStorage.clear() 
       window.location.reload(true)
+      this.scrollToTop()
       }
     
 },
@@ -576,22 +544,6 @@ methods:{
         localStorage.setItem('service',JSON.stringify(this.services.id));
   },
   computed:{
-
-   
-    //if (this.test !=0){
-    // localStorage.setItem(this.test)
-   // }
-    /**   set (services) {
-        return  localStorage.setItem('services', JSON.stringify(services));
-    },
-      get () {
-        return localStorage.getItem('services') || 0;
-      },
-   
-      isSelected(){
-        return this.jobRequest.includes(this.services.id);
-      },
- */
 
         
 
@@ -620,7 +572,8 @@ methods:{
 
 .categorie{
   text-align: center;
-  text-justify: auto;
+  text-justify: center;
+  justify-content: center;
 
     
     font-weight: 600;
@@ -628,8 +581,9 @@ methods:{
 }
 
 .category{
-  text-align: left;
-  text-justify: newspaper;
+  text-align: center;
+  text-justify: auto;
+
 
     
     font-weight: 600;

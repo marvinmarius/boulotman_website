@@ -96,7 +96,7 @@
           </v-card>
           
         </v-col>
-        <v-col cols=3  class="flex " >
+        <v-col cols="12" sm="3" md="3"  class="flex " >
           <v-card
             class="pa-0 brown"
             flat
