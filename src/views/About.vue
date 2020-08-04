@@ -11,7 +11,7 @@
   
    <v-container >
      
-     <v-col cols="12" class="mt-4"> 
+     <v-col cols="12" class="mt-2"> 
         <h4 class="team"><p>{{$t('Who We Are?')}}</p></h4>
      </v-col>
      <v-col cols="12"  class="hidden-md-and-up"> 

@@ -1,39 +1,29 @@
 <template>
 
-   <v-container fluid class="brown " >
-          <v-row no-gutters 
+   <v-container fluid class="brown justify-sm-center justify-space-between " >
+          <v-row 
               
-              class="flex  fill-height "
+              class="flex justify-space-between ma-n3 "
               
            >
-        <v-col cols="12" sm="3" md="3" >
-          <v-card
-            class="pa-0 brown "
-            
-            tile
-            flat
-           
-          >
+        <v-col cols="12" sm="3" md="3" lg="3" >
+          
           <router-link :to="`/${$i18n.locale}`" @click.native="scrollToTop">
             <v-img
           alt="boulotman Logo"
-          class="shrink mr-2"
-          contain
+          
+          
           src="../assets/boulotmanlogo.png" 
           transition="scale-transition"
-          width="120"
+          width="150"
     />
           </router-link>
     
-          </v-card>
+      
         </v-col>
-        <v-col cols="12" sm="3" md="3">
-          <v-card
-            class="brown"
-            flat
-            tile
-         
-          >
+        <v-col cols="12" sm="3" md="3" lg="3">
+          
+       
         <v-card-text class="justify-center"><h2 class="text-decoration-underline">Socials</h2></v-card-text>
         <v-list-item-group class="justify-center grp">
         <p class="v-list-item--link"><v-icon  size="24px" left>mdi-facebook</v-icon>
@@ -41,19 +31,12 @@
         <p class="v-list-item--link"><v-icon size="24px" left>mdi-instagram</v-icon>Instagram</p>
         <p class="v-list-item--link"><v-icon size="24px" left>mdi-twitter</v-icon>Twitter</p>
         </v-list-item-group>
-       
-       
-          </v-card>
+          
 
         </v-col>
 
-        <v-col cols="12" sm="3" md="3" >
-          <v-card
-            class="mx-auto brown "
-          flat
-            tile
-             
-          >
+        <v-col cols="12" sm="3" md="3" lg="3" >
+          
               
          <v-card-text class="justify-center"><h2 class="text-decoration-underline">{{$t('Useful Links')}}</h2></v-card-text>
     <v-list-item-group class="justify-center flex-column grp">
@@ -74,12 +57,7 @@
             {{$t('Privacy Policy')}}</router-link>
             </p>
             
-           <p class="v-list-item--link">
-             <v-icon size="24px" left>mdi-electron-framework</v-icon>
-             <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/services`" >
-            {{$t('Services')}}
-             </router-link>
-             </p>
+           
            <p class="v-list-item--link">
              <v-icon size="24px" left>mdi-book-open</v-icon>
              <router-link class="text--white" @click.native="scrollToTop" :to="`/${$i18n.locale}/terms-and-conditions`" >
@@ -93,44 +71,34 @@
         
           
     
-          </v-card>
+        
           
         </v-col>
-        <v-col cols="12" sm="3" md="3"  class="flex " >
-          <v-card
-            class="pa-0 brown"
-            flat
-            tile
-           
-          >
+        <v-col cols="12" sm="3" md="3" lg="3" class="flex " >
+         
        <v-card-text class="justify-center"><h2 class="text-decoration-underline">{{ $t('Our Contacts')}}</h2></v-card-text>
      <v-list-item-group class="justify-center grp">
           <p class="v-list-item--link font-smaller"><v-icon size="24px" left>mdi-email</v-icon>boulotman@gmail.com</p>
          <p class="v-list-item--link font-smaller"><v-icon size="24px" left>mdi-phone</v-icon>(+237)698884618</p>
           <p class="v-list-item--link "><v-icon size="24px" left>mdi-phone-classic</v-icon>fix: +237 233-478-795</p>
      </v-list-item-group>
-          </v-card>
+      
          
         </v-col>
     </v-row >
 
-      <v-divider class="pa-1" ></v-divider>
-      <v-row   class="flex  fill-height">
-          <v-col cols="12" class="flex- ">
-          <v-card
-            class=" ma-0 pa-0 teal "
-            flat
-            tile
-           
-          >
-       <v-card-text class="text-center brown "><h2 class="text-decoration-underline">{{ new Date().getFullYear() }} — 
+      <v-divider  ></v-divider>
+     
+          <v-col cols="12 ">
+          
+       <v-card-text class="text-center brown ma-n2"><h2 class="text-decoration-underline">{{ new Date().getFullYear() }} — 
          <strong>{{ $t('All Rights Reserved')}} </strong></h2></v-card-text>
          
         
-          </v-card>
+   
          
         </v-col>
-    </v-row>
+    
 
  
   </v-container>
